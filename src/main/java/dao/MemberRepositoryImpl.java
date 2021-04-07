@@ -116,7 +116,7 @@ public class MemberRepositoryImpl implements MemberRepository{
         ResultSet rs=null;
         try{
             conn=getConnection();
-            String sql="select * from member where id=?, password=?";
+            String sql="select * from member where id=? AND `password`=?";
             pstmt=conn.prepareStatement(sql);
             pstmt.setString(1,id);
             pstmt.setString(2,password);
