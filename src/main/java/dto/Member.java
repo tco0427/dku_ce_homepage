@@ -1,7 +1,10 @@
 package dto;
 
-public class Member {
+import java.util.Arrays;
+import java.util.List;
 
+public class Member {
+    public static final List<String> passwordHintQuestion= Arrays.asList("다른 이메일 주소는?", "나의 애완동물 이름은?","나의 아버지 성함은?", "나의 어머니 성함은?", "나의 별명은?", "나의 좌우명은?");
     private String id;
     private String password;
     private String email;
@@ -90,5 +93,22 @@ public class Member {
                 ", findPasswordAnswer='" + passwordHint + '\'' +
                 ", studentID=" + studentID +
                 '}';
+    }
+
+    public static Member createMember(List<String> list){
+        String id=list.get(0);
+        String password=list.get(1);
+        String passwordCheck=list.get(2);
+        if(password.equals(passwordCheck)){
+        }else{
+            return null;
+        }
+        String passwordHint=list.get(4);
+        Integer studentID=Integer.parseInt(list.get(5));
+        String name=list.get(6);
+        String email=list.get(7);
+        String nickname=list.get(8);
+
+        return new Member(id,password,email,name,nickname,passwordHint,studentID);
     }
 }
