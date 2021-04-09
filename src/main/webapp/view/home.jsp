@@ -17,6 +17,7 @@
                     <input type="password" name="password" maxlength="15">
                     <br>
                     <button type="submit">로그인</button>
+                    <button type="button" onclick="location.href='/form/signUp.jsp'">회원가입</button>
                 </form>
             </div>
         </article>
