@@ -98,6 +98,7 @@ public class Member {
     public static Member createMember(List<String> list){
         String id=list.get(0);
         String password=list.get(1);
+
         String passwordCheck=list.get(2);
         if(password.equals(passwordCheck)){
         }else{
