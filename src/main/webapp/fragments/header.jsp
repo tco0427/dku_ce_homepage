@@ -8,3 +8,4 @@
     <a href="/view/home.jsp" role="button"><img src="/resource/img/header.png" width="100%"></a>
 </div></body>
 </html>
+<!-- dku_ce header -->
