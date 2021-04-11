@@ -6,7 +6,7 @@
 </head>
 <body>
     <header>
-        <h1 style="text-align: center">REDBEANS</h1>
+        <%@ include file="/fragments/header.jsp" %>
     </header>
     <section>
         <article id="loginSection">
