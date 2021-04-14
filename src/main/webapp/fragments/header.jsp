@@ -4,7 +4,7 @@
 </head>
 <body>
 <%--테스트용 주석--%>
-<div class="text-center">
+<div class="header">
     <a href="/view/home.jsp" role="button"><img src="/resource/img/header.png" width="100%"></a>
 </div></body>
 </html>
