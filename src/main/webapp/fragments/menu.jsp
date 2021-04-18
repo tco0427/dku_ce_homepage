@@ -7,7 +7,7 @@ a {
 	text-decoration:none;
 	color: black;
 	font-family: "나눔고딕";
-	} 
+	}
 </style>
 </head>
 <body>

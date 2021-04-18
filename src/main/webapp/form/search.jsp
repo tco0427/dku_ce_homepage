@@ -7,6 +7,7 @@
 <style>
 .container-1{
   width: 200px;
+  height:25px;
   border: solid;
   border-radius: 20px;
   vertical-align: middle;
