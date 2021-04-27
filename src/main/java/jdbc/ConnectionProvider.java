@@ -1,8 +1,9 @@
-package dao;
+package jdbc;
 
 import java.sql.*;
 
-public class RdbmsDAO {
+
+public class ConnectionProvider {
     private static final String PROPERTIES = "?useSSL=false";
     private static final String DB_SCHEMAS = "ceHomepage";
     private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
