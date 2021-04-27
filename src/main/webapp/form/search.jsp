@@ -3,9 +3,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="/resource/css/search.jsp"/>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 <style>
+    .container-1{
+        width: 200px;
+        height:25px;
+        border: solid;
+        border-radius: 20px;
+        vertical-align: middle;
+        white-space: nowrap;
+        position: relative;
+    }
+    .container-1 input#text{
+        width: 150px;
+        height: 20px;
+        background: #ffffff;
+        border: none;
+        font-size: 10pt;
+        float: left;
+        color: #63717f;
+        padding-left: 20px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 20px;
+    }
+    .container-1 .icon{
+        position: absolute;
+        top: 50%;
+        margin-left: 17px;
+        margin-top: 17px;
+        z-index: 1;
+        color: #4f5b66;
+    }
 </style>
 <meta charset="UTF-8">
 <title>Insert title here</title>

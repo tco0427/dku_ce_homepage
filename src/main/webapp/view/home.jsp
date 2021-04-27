@@ -38,7 +38,7 @@
                 <jsp:include page="/form/login.jsp"/>
             </c:when>
             <c:when test="${loginFlag eq 'success'}">
-                <jsp:include page="/fragments/logined.jsp"/>
+                <jsp:include page="/fragments/userProfile.jsp"/>
             </c:when>
         </c:choose>
         <br>
