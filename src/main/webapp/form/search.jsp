@@ -40,7 +40,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="box">
+<div class="b">
   <div class="container-1">
       <form action="/index.jsp">
       <input type="text" id="text" placeholder="Search..." />
