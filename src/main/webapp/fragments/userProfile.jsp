@@ -4,16 +4,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/resource/css/userProfile.css">
     <meta charset="UTF-8">
 </head>
 <body>
 <c:set var="name" value="${sessionScope.name}"/>
-<div class="box" style="background: #BDBDBD; float:left;">
-    <img class="profile" src="">
+<div class="box">
+    <i class="fa fa-user fa-5x" aria-hidden="true"></i>
 </div>
-<div class="userName" style="display:table-cell; vertical-align:middle;">
-    <div style="margin-top:40%; text-align: center;">${name}</div>
+<div class="userName">
+    ${name}
 </div>
 <button class="write">카페 글쓰기</button>
 </body>

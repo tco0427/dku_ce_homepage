@@ -2,14 +2,23 @@
     font-family: "나눔고딕";
 }
 .box {
-    width: 150px;
-    height: 150px;
+    width: 80px;
+    height: 80px;
     border-radius: 70%;
+    border: solid 1px;
+    text-align: center;
+    float:left;
 }
 .profile {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+.userName {
+	width: 100px;
+    height: 80px;
+	display:table-cell; 
+	text-align:center;
 }
 .write{
     width: 100%;
