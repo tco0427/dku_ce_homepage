@@ -16,6 +16,7 @@
 <div class="userName">
     ${name}
 </div>
+<button class="logout">로그아웃</button>
 <button class="write" onclick="location.href='/form/postEdit.jsp'">카페 글쓰기</button>
 </body>
 </html>
