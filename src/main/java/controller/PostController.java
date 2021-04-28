@@ -34,14 +34,14 @@ public class PostController extends HttpServlet {
         if(command.equals("/Post/PostCreate")){
             action=new PostCreate();
             action.execute(request,response);
-            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/post.jsp");
+            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/index.jsp");
             requestDispatcher.forward(request,response);
         }else if(command.equals("/Post/PostDelete")){
             action=new PostDelete();
             action.execute(request,response);
             RequestDispatcher requestDispatcher=request.getRequestDispatcher("/index.jsp");
             requestDispatcher.forward(request,response);
-        }else if(command.equals("/Post/PostRead")){
+        }else if(command.equals("/Post/PostFind")){
             action=new PostFind();
             action.execute(request,response);
             RequestDispatcher requestDispatcher=request.getRequestDispatcher("/postList.jsp");

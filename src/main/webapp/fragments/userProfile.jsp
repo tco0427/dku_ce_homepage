@@ -16,6 +16,6 @@
 <div class="userName">
     ${name}
 </div>
-<button class="write">카페 글쓰기</button>
+<button class="write" onclick="location.href='/form/postEdit.jsp'">카페 글쓰기</button>
 </body>
 </html>

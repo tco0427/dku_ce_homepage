@@ -23,7 +23,7 @@ public class PostRepositoryImpl implements PostRepository{
         Connection conn=null;
         try{
             conn=getConnection();
-            String sql="insert into post values (?,?,?,?,?)";
+            String sql="insert into post(memberID,title,content,creationDate,classification) values (?,?,?,?,?)";
             pstmt=conn.prepareStatement(sql);
             pstmt.setString(1,post.getMemberID());
             pstmt.setString(2,post.getTitle());

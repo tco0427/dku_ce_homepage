@@ -16,8 +16,10 @@ public class PostCreate implements Action {
     public void execute(HttpServletRequest request, HttpServletResponse response) {
         List<String> list=new ArrayList<>();
         Enumeration<String> parameters=request.getParameterNames();
+
         while(parameters.hasMoreElements()){
-            list.add(request.getParameter(parameters.nextElement()));
+            String buf=request.getParameter(parameters.nextElement());
+            list.add(buf);
         }
         Post post=Post.createPost(list);
         if(post==null){
