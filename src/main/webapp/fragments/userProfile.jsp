@@ -16,6 +16,7 @@
 <div class="userName">
     ${name}
 </div>
+<button class="logout">로그아웃</button>
 <button class="write">카페 글쓰기</button>
 </body>
 </html>
