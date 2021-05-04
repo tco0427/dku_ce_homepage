@@ -31,15 +31,18 @@ public class PostController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         Action action=null;
-        if(command.equals("/Post/PostCreate")){
+        if(command.equals("/Post")){
+            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/form/postCreate.jsp");
+            requestDispatcher.forward(request,response);
+        }else if(command.equals("/Post/PostCreate")){
             action=new PostCreate();
             action.execute(request,response);
-            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/index.jsp");
+            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/CEHome/Main");
             requestDispatcher.forward(request,response);
         }else if(command.equals("/Post/PostDelete")){
             action=new PostDelete();
             action.execute(request,response);
-            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/index.jsp");
+            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/CEHome/Main");
             requestDispatcher.forward(request,response);
         }else if(command.equals("/Post/PostFind")){
             action=new PostFind();

@@ -17,6 +17,6 @@
     ${name}
 </div>
 <button class="logout" onclick="location.href='/Member/MemberLogout'">로그아웃</button>
-<button class="write" onclick="location.href='/form/postEdit.jsp'">카페 글쓰기</button>
+<button class="write" onclick="location.href='/Post'">카페 글쓰기</button>
 </body>
 </html>

@@ -29,17 +29,17 @@ public class MemberController extends HttpServlet {
         if(command.equals("/Member/MemberLogin")){
             action=new MemberLoginAction("login");
             action.execute(request,response);
-            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/index.jsp");
+            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/CEHome/Main");
             requestDispatcher.forward(request,response);
         }else if(command.equals("/Member/MemberLogout")){
             action=new MemberLoginAction("logout");
             action.execute(request,response);
-            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/index.jsp");
+            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/CEHome/Main");
             requestDispatcher.forward(request,response);
         }else if(command.equals("/Member/MemberJoin")){
             action=new MemberJoinAction();
             action.execute(request,response);
-            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/index.jsp");
+            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/CEHome/Main");
             requestDispatcher.forward(request,response);
         }
     }
