@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="dto.Member" %>
 <html>
 <head>
@@ -30,15 +31,10 @@
     </div>
     <div class="mb-3">
         <label class="form-label">비밀번호 찾기 질문</label>
-        <select name="none" class="form-select" aria-label="Default select example">
-            <option value="<%=Member.passwordHintQuestion.get(0)%>" selected><%=Member.passwordHintQuestion.get(0)%></option>
-            <%
-                for(int i=1;i<Member.passwordHintQuestion.size();i++){
-            %>
-            <option value="<%=Member.passwordHintQuestion.get(i)%>"><%=Member.passwordHintQuestion.get(i)%></option>
-            <%
-                }
-            %>
+        <select name="passwordHintQuestion" class="form-select" aria-label="Default select example">
+            <c:forEach var="passwordHintQuestion" items="<%=Member.passwordHintQuestion%>">
+                <option value="${passwordHintQuestion}">${passwordHintQuestion}</option>
+            </c:forEach>
         </select>
         <input name="passwordHint" type="text" maxlength="20" class="form-control" required>
         <div id="passwordHint" class="form-text">비밀번호 힌트는 필수 항목 입니다.</div>
