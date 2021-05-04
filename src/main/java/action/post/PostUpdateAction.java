@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-public class PostUpdate implements Action {
+public class PostUpdateAction implements Action {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
         PostRepository postRepository= PostRepositoryImpl.getInstance();

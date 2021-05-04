@@ -12,10 +12,10 @@ a {
 </head>
 <body>
 <div>
-   <br><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;<a href="/view/home.jsp" >Notice</a><br>
-   <br><i class="fa fa-book" aria-hidden="true"></i>&nbsp;<a href="/view/home.jsp" >Study</a><br>
-   <br><i class="fa fa-users" aria-hidden="true"></i>&nbsp;<a href="/view/home.jsp" >Free</a><br>
-   <br><i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/view/home.jsp" >Documents</a><br>
-   <br><i class="fa fa-key" aria-hidden="true"></i>&nbsp;<a href="/view/home.jsp" >Anonymous</a><br>
+   <br><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;<a href="/Classification/Notice" >Notice</a><br>
+   <br><i class="fa fa-book" aria-hidden="true"></i>&nbsp;<a href="/Classification/Study" >Study</a><br>
+   <br><i class="fa fa-users" aria-hidden="true"></i>&nbsp;<a href="/Classification/Free" >Free</a><br>
+   <br><i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/Classification/Documents" >Documents</a><br>
+   <br><i class="fa fa-key" aria-hidden="true"></i>&nbsp;<a href="/Classification/Anonymous" >Anonymous</a><br>
 </div>
 </html>

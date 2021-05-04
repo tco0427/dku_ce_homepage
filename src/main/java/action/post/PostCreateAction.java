@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-public class PostCreate implements Action {
+public class PostCreateAction implements Action {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
         List<String> list=new ArrayList<>();

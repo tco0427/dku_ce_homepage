@@ -109,6 +109,30 @@ public class PostRepositoryImpl implements PostRepository{
     }
 
     @Override
+    public List<Post> findByClassification(Classification classification) {
+        Connection conn=null;
+        PreparedStatement pstmt=null;
+        ResultSet rs=null;
+        try{
+            conn=getConnection();
+            String sql="select * from post where classification=?";
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setString(1,classification.toString());
+            rs=pstmt.executeQuery();
+            List<Post> list=new ArrayList<>();
+            while(rs.next()){
+                list.add(createFromResultSet(rs));
+            }
+            return list;
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally{
+            resourceClose(conn,pstmt,rs);
+        }
+        return null;
+    }
+
+    @Override
     public int update(Post post) {
         Connection conn=null;
         PreparedStatement pstmt=null;
@@ -142,7 +166,7 @@ public class PostRepositoryImpl implements PostRepository{
         String classificationString;
         Classification classification=null;
         try{
-            id=rs.getInt("id");
+            id=rs.getInt("postPK");
             memberId=rs.getString("memberID");
             title=rs.getString("title");
             content=rs.getString("content");

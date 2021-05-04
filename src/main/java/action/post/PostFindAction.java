@@ -7,7 +7,7 @@ import dao.PostRepositoryImpl;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class PostDelete implements Action {
+public class PostFindAction implements Action {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
         Integer id=null;
@@ -18,7 +18,7 @@ public class PostDelete implements Action {
         }
 
         PostRepository postRepository= PostRepositoryImpl.getInstance();
-        int code=postRepository.delete(id);
-        request.setAttribute("errorCode",code);
+        request.setAttribute("post",postRepository.findOne(id));
+        request.setAttribute("postId",id);
     }
 }

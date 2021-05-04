@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "PostController", value = "/Post/*")
-public class PostController extends HttpServlet {
+@WebServlet(name = "ClassificationController", value = "/Classification/*")
+public class ClassificationController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
@@ -28,23 +28,30 @@ public class PostController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         Action action=null;
-        if(command.equals("/Post")){
-            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/form/postCreate.jsp");
-            requestDispatcher.forward(request,response);
-        }else if(command.equals("/Post/PostCreate")){
-            action=new PostCreateAction();
+        if(command.equals("/Classification/Notice")){
+            action=new PostListAction("Notice");
             action.execute(request,response);
-            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/CEHome/Main");
+            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/view/post/notice.jsp");
             requestDispatcher.forward(request,response);
-        }else if(command.equals("/Post/PostDelete")){
-            action=new PostDeleteAction();
+        }else if(command.equals("/Classification/Study")){
+            action=new PostListAction("Study");
             action.execute(request,response);
-            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/CEHome/Main");
+            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/view/post/study.jsp");
             requestDispatcher.forward(request,response);
-        }else if(command.equals("/Post/PostUpdate")){
-            action=new PostUpdateAction();
+        }else if(command.equals("/Classification/Free")){
+            action=new PostListAction("Free");
             action.execute(request,response);
-            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/post.jsp");
+            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/view/post/free.jsp");
+            requestDispatcher.forward(request,response);
+        }else if(command.equals("/Classification/Documents")){
+            action=new PostListAction("Documents");
+            action.execute(request,response);
+            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/view/post/documents.jsp");
+            requestDispatcher.forward(request,response);
+        }else if(command.equals("/Classification/Anonymous")){
+            action=new PostListAction("Anonymous");
+            action.execute(request,response);
+            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/view/post/anonymous.jsp");
             requestDispatcher.forward(request,response);
         }
     }
