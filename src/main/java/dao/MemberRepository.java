@@ -5,13 +5,10 @@ import dto.Member;
 import java.util.List;
 
 public interface MemberRepository {
-
     public int save(Member member);
     public int delete(String id);
-    //회원정보 수정
     public int editMail(Member member);
     public int editPassword(Member member);
-
     public Member findOne(String id, String password);
     public List<Member> findAll();
     public List<Member> findByHint(String passwordHint);

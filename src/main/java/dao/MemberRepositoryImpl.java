@@ -6,8 +6,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static dao.RdbmsDAO.getConnection;
-import static dao.RdbmsDAO.resourceClose;
+import static jdbc.ConnectionProvider.getConnection;
+import static jdbc.ConnectionProvider.resourceClose;
 
 public class MemberRepositoryImpl implements MemberRepository{
 
@@ -180,7 +180,7 @@ public class MemberRepositoryImpl implements MemberRepository{
         return null;
     }
 
-    public Member createFromResultSet(ResultSet rs) {
+    private Member createFromResultSet(ResultSet rs) {
         String id=null;
         String password=null;
         String email=null;
