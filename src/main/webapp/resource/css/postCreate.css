@@ -1,0 +1,84 @@
+.all {
+    width: 1000px;
+    margin: 0px auto;
+    font-family: "나눔고딕";
+}
+.menu {
+    width: 200px;
+    height: 100%;
+    border-top: 5px solid rgb(128, 128, 128);
+    margin-top: 52px;
+    padding: 20px;
+    float: left;
+}
+.main {
+    width: 700px;
+    height: 1000px;
+    border: 5px solid lightgrey;
+    padding: 20px;
+    margin-top: 10px;
+    float: right;
+}
+.search {
+    float: right;
+    margin-top: 10px;
+}
+.bar {
+    border-top: 3px solid rgb(128,128,128);
+    border-bottom: 2px solid lightgrey;
+    margin-top:20px;
+    word-spacing:100px;
+}
+.title{
+	width: 450px;
+	height: 40px;
+	border: 2px solid lightgrey;
+}
+.description {
+    font-size: 20px;
+}
+.select{
+	width:210px;
+	height:40px;
+	border: 2px solid lightgrey;
+}
+.mb-1{
+	float:left;
+    margin-top:10px;
+}
+.mb-2{
+	float:right;
+	margin-top:10px;
+}
+.submit{
+	width: 670px;
+	height: 35px;
+	background-color:lightgrey;
+	border: 1px solid grey;
+	border-bottom: none;
+}
+
+.submitBtn{
+	margin-left:540px;
+	width:50px;
+	height:25px;
+	background-color:white;
+	border: 1px solid white;
+	border-radius:5px;
+}
+.content{
+	border: 1px solid grey;
+	width: 672px;
+	height: 500px;
+	vertical-align: top;
+}
+.mb-3{
+	clear:both;
+	margin-top:80px;
+}
+input:focus{
+	outline:none;
+}
+textarea:focus{
+	outline:none;
+}
