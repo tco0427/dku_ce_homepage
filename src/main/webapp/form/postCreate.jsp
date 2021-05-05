@@ -14,7 +14,6 @@
 	<c:set var="registerErrorCode" value="${requestScope.registerErrorCode}" />
 	<c:set var="memberId" value="${sessionScope.id}" />
 
-
 	<c:choose>
 		<c:when test="${registerErrorCode eq -1}">
 			out.println("<script>alert('회원가입에 실패하였습니다!'); history.go(-1);</script>");

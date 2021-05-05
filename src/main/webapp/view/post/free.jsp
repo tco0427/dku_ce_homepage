@@ -9,19 +9,18 @@
 <body>
 	<c:set var="loginFlag" value="${sessionScope.login}" />
 	<c:set var="loginFail" value="${requestScope.loginFail}" />
-	<c:set var="registerErrorCode"
-		value="${requestScope.registerErrorCode}" />
+	<c:set var="registerErrorCode" value="${requestScope.registerErrorCode}" />
 
 	<c:choose>
 		<c:when test="${registerErrorCode eq -1}">
-        out.println("<script>alert('회원가입에 실패하였습니다.'); history.go(-1);</script>");
-    </c:when>
+			out.println("<script>alert('회원가입에 실패하였습니다.'); history.go(-1);</script>");
+		</c:when>
 		<c:when test="${registerErrorCode eq -10}">
-        out.println("<script>alert('이미 존재하는 아이디입니다.'); history.go(-1);</script>
+			out.println("<script>alert('이미 존재하는 아이디입니다.'); history.go(-1);</script>
 		</c:when>
 		<c:when test="${loginFail eq true}">
-        out.println("<script>alert('로그인에 실패하였습니다.'); window.location='/index.jsp';</script>");
-    </c:when>
+			out.println("<script>alert('로그인에 실패하였습니다.'); window.location='/index.jsp';</script>");
+		</c:when>
 	</c:choose>
 
 	<div class="all">
@@ -85,10 +84,6 @@
 				</div>
 			</div>
 		</div>
-
-
-
 	</div>
-
 </body>
 </html>

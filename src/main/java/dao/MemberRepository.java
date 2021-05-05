@@ -10,6 +10,7 @@ public interface MemberRepository {
     public int editMail(Member member);
     public int editPassword(Member member);
     public Member findOne(String id, String password);
+    public Member findOne(String id);
     public List<Member> findAll();
     public List<Member> findByHint(String passwordHint);
 }

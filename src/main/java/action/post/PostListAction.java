@@ -24,7 +24,6 @@ public class PostListAction implements Action {
         PostRepository postRepository= PostRepositoryImpl.getInstance();
         Classification classification=Classification.valueOf(this.classification);
         List<Post> postList=postRepository.findByClassification(classification);
-
         int size=postList.size();
 
         String page=request.getParameter("page");
@@ -59,7 +58,7 @@ public class PostListAction implements Action {
             int buf=Integer.parseInt(Paging.getCurrentPage())-1;
             buf=buf*Paging.getPageCount();
             if(buf==0){
-                showPageCount=0;    //일단은 이렇게 해뒀음...
+                showPageCount=size;
             }else {
                 showPageCount = (size % buf);
             }

@@ -41,10 +41,10 @@ table.type07 thead th {
 }
 
 
-#first {width:60%;}
-#firstTd {width:60%; text-align:left;}
-#second {width:20%;}
-#third {width:20%;}
+#title {width:60%;}
+#titleTd {width:60%; text-align:left;}
+.writer {width:20%;}
+.date {width:20%;}
 
 table.type07 tbody th {
   width: 150px;

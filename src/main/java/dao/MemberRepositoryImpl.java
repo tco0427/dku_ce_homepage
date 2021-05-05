@@ -132,6 +132,30 @@ public class MemberRepositoryImpl implements MemberRepository{
     }
 
     @Override
+    public Member findOne(String id) {
+        Connection conn=null;
+        PreparedStatement pstmt=null;
+        ResultSet rs=null;
+        try{
+            conn=getConnection();
+            String sql="select * from member where id=?";
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setString(1,id);
+            rs=pstmt.executeQuery();
+            if(rs.next()){
+                return createFromResultSet(rs);
+            }else{
+                return null;
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally{
+            resourceClose(conn,pstmt, rs);
+        }
+        return null;
+    }
+
+    @Override
     public List<Member> findAll() {
         Connection conn=null;
         PreparedStatement pstmt=null;

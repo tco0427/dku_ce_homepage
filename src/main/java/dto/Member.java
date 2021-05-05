@@ -1,5 +1,8 @@
 package dto;
 
+import dao.MemberRepository;
+import dao.MemberRepositoryImpl;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -111,5 +114,15 @@ public class Member {
         String nickname=list.get(8);
 
         return new Member(id,password,email,name,nickname,passwordHint,studentID);
+    }
+
+    public static String getNickName(String id){
+        MemberRepository memberRepository= MemberRepositoryImpl.getInstance();
+        Member member = memberRepository.findOne(id);
+        if(member!=null){
+            return member.getNickname();
+        }else{
+            return null;
+        }
     }
 }

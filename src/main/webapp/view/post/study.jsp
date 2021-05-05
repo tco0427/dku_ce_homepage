@@ -1,35 +1,25 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: dongkyu
-  Date: 2021/05/04
-  Time: 8:40 오후
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <title>공부게시판</title>
 <link rel="stylesheet" href="/resource/css/post.css">
-<!-- <link rel="stylesheet" href="/resource/css/home.css"> -->
 </head>
-
 <body>
 	<c:set var="loginFlag" value="${sessionScope.login}" />
 	<c:set var="loginFail" value="${requestScope.loginFail}" />
-	<c:set var="registerErrorCode"
-		value="${requestScope.registerErrorCode}" />
+	<c:set var="registerErrorCode" value="${requestScope.registerErrorCode}" />
 
 	<c:choose>
 		<c:when test="${registerErrorCode eq -1}">
-        out.println("<script>alert('회원가입에 실패하였습니다.'); history.go(-1);</script>");
-    </c:when>
+			out.println("<script>alert('회원가입에 실패하였습니다.'); history.go(-1);</script>");
+		</c:when>
 		<c:when test="${registerErrorCode eq -10}">
-        out.println("<script>alert('이미 존재하는 아이디입니다.'); history.go(-1);</script>
+			out.println("<script>alert('이미 존재하는 아이디입니다.'); history.go(-1);</script>
 		</c:when>
 		<c:when test="${loginFail eq true}">
-        out.println("<script>alert('로그인에 실패하였습니다.'); window.location='/index.jsp';</script>");
-    </c:when>
+			out.println("<script>alert('로그인에 실패하였습니다.'); window.location='/index.jsp';</script>");
+		</c:when>
 	</c:choose>
 
 	<div class="all">
@@ -57,7 +47,6 @@
 				<div class="postName">Study</div>
 				<br>
 				<div class="postDetail">단국대학교 컴퓨터공학과 학생들이 전공과 관련한 이야기 나누는 게시판입니다.</div>
-
 				<table class="type07">
 					<thead>
 						<tr>
@@ -66,14 +55,11 @@
 							<th id="third">작성날짜</th>
 						</tr>
 					</thead>
-
 					<tr>
 						<td id="firstTd">pypy3 코테에서 사용불가인가요?</td>
 						<td id="second">코테뿌셔님</td>
 						<td id="third">2021-03-11</td>
 					</tr>
-					
-
 				</table>
 				<div class="pageButton">
 					<div class="btn-toolbar mb-3 " role="toolbar"
@@ -93,10 +79,6 @@
 				</div>
 			</div>
 		</div>
-
-
-
 	</div>
-
 </body>
 </html>
