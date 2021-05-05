@@ -20,5 +20,6 @@ public class PostFindAction implements Action {
         PostRepository postRepository= PostRepositoryImpl.getInstance();
         request.setAttribute("post",postRepository.findOne(id));
         request.setAttribute("postId",id);
+        //--test
     }
 }

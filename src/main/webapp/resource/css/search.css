@@ -1,0 +1,22 @@
+.container-1{
+        width: 200px;
+        height:25px;
+        border: solid;
+        border-radius: 20px;
+        vertical-align: middle;
+        white-space: nowrap;
+        position: relative;
+    }
+.container-1 input#text{
+    width: 150px;
+    height: 20px;
+    background: #ffffff;
+    border: none;
+    font-size: 10pt;
+    float: left;
+    color: #63717f;
+    padding-left: 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 20px;
+}

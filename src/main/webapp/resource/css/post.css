@@ -1,0 +1,107 @@
+* {
+	font-family: "나눔고딕";
+}
+.container{
+text-align:center;
+}
+.postName {
+	
+	font-size: 30px;
+	text-decoration: underline;
+	text-underline-position: under;
+}
+
+.postDetail{
+	margin-top: -10px;
+	margin-bottom: 40px;
+	
+}
+table{
+
+width:90%;
+}
+table.type07 {	
+  border-collapse: collapse;
+  text-align: left;
+  line-height: 1.5;
+  
+  margin: 20px 10px;
+}
+table.type07 thead {
+  border-top: 3px solid #72757a;
+  border-bottom: 1px solid #72757a;
+  /* background: #ece6cc; */
+}
+table.type07 thead th {
+  /* padding: 10px; */
+  text-align: center;
+  font-weight: bold;
+  vertical-align: top;
+  color: #392f31;
+}
+
+
+#first {width:60%;}
+#firstTd {width:60%; text-align:left;}
+#second {width:20%;}
+#third {width:20%;}
+
+table.type07 tbody th {
+  width: 150px;
+  /* padding: 10px; */
+  font-weight: bold;
+  vertical-align: top;
+  border-bottom: 1px solid #ccc;
+  /* background: #fcf1f4; */
+}
+table.type07 td {
+  /* width: 350px; */
+  padding: 10px;
+  vertical-align: top;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.all {
+    width: 1000px;
+    margin: 0px auto;
+    font-family: "나눔고딕";
+}
+.menu {
+    width: 200px;
+    height: 100%;
+    border-top: 5px solid rgb(128, 128, 128);
+    margin-top: 52px;
+    padding: 20px;
+    float: left;
+}
+.main {
+    width: 700px;
+    height: 100%;
+    border: 5px solid lightgrey;
+    padding: 20px;
+    margin-top: 10px;
+    float: right;
+    position:relative;
+}
+
+.search {
+    float: right;
+    margin-top: 10px;
+}
+
+.bar {
+    border-top: 3px solid rgb(128,128,128);
+    border-bottom: 2px solid lightgrey;
+    margin-top:20px;
+    word-spacing:100px;
+}
+
+.pageButton {
+	
+	height: 20px;
+	position: absolute;
+	left:25%; 
+	
+	bottom: 20px;
+}

@@ -12,6 +12,7 @@ a {
 </head>
 <body>
 <div>
+<!--  -->
    <br><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;<a href="/Classification/Notice" >Notice</a><br>
    <br><i class="fa fa-book" aria-hidden="true"></i>&nbsp;<a href="/Classification/Study" >Study</a><br>
    <br><i class="fa fa-users" aria-hidden="true"></i>&nbsp;<a href="/Classification/Free" >Free</a><br>
