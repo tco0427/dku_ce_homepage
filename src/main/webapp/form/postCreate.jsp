@@ -11,31 +11,22 @@
 <body>
 	<c:set var="loginFlag" value="${sessionScope.login}" />
 	<c:set var="loginFail" value="${requestScope.loginFail}" />
-	<c:set var="registerErrorCode"
-		value="${requestScope.registerErrorCode}" />
+	<c:set var="registerErrorCode" value="${requestScope.registerErrorCode}" />
+	<c:set var="memberId" value="${sessionScope.id}" />
+
 
 	<c:choose>
 		<c:when test="${registerErrorCode eq -1}">
-        out.println("<script>
-									alert('회원가입에 실패하였습니다!');
-									history.go(-1);
-								</script>");
-    </c:when>
+			out.println("<script>alert('회원가입에 실패하였습니다!'); history.go(-1);</script>");
+		</c:when>
 		<c:when test="${registerErrorCode eq -10}">
-        out.println("<script>
-									alert('이미 존재하는 아이디입니다.');
-									history.go(-1);
-								</script>
+			out.println("<script>alert('이미 존재하는 아이디입니다.'); history.go(-1);</script>
 		</c:when>
 		<c:when test="${loginFail eq true}">
-        out.println("<script>
-									alert('로그인에 실패하였습니다.');
-									window.location = '/index.jsp';
-								</script>");
-    </c:when>
+			out.println("<script>alert('로그인에 실패하였습니다.'); window.location='/index.jsp';</script>");
+		</c:when>
 	</c:choose>
-	<c:set var="memberId" value="${sessionScope.id}" />
-	<c:set var="id" value="${memberId}" scope="request" />
+
 	<div class="all">
 		<header>
 			<jsp:include page="/fragments/header.jsp" />
@@ -55,11 +46,12 @@
 			<br>
 			<jsp:include page="/fragments/menu.jsp" />
 		</div>
+
 		<div class="main">
 			<form action="/Post/PostCreate" method="post" accept-charset="UTF-8"
 				style="margin: 15px;">
 				<div>
-					<input name="id" type="text" value="${id}"
+					<input name="memberId" type="text" value="${memberId}"
 						style="display: none; visibility: hidden;">
 				</div>
 				<div class="description">
@@ -73,8 +65,7 @@
 				<div class="mb-2">
 					<select name="classification" class="select"
 						aria-label="Default select example">
-						<c:forEach var="classification"
-							items="<%=Classification.values()%>">
+						<c:forEach var="classification" items="<%=Classification.values()%>">
 							<option value="${classification.name()}">${classification.name()}</option>
 						</c:forEach>
 					</select>
@@ -89,8 +80,6 @@
 					</div>
 					<textarea name="content" cols="40" rows="100" class="content" placeholder="내용을 입력해주세요" required></textarea>
 				</div>
-
-
 			</form>
 		</div>
 	</div>
