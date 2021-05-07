@@ -10,6 +10,7 @@
 	<c:set var="loginFlag" value="${sessionScope.login}" />
 	<c:set var="loginFail" value="${requestScope.loginFail}" />
 	<c:set var="registerErrorCode" value="${requestScope.registerErrorCode}" />
+	<c:set var="postList" value="${requestScope.postList}"/>
 
 	<c:choose>
 		<c:when test="${registerErrorCode eq -1}">
@@ -51,20 +52,20 @@
 
 				<table class="type07">
 					<thead>
-						<tr>
-							<th id="first">제목</th>
-							<th id="second">작성자</th>
-							<th id="third">작성날짜</th>
-						</tr>
-					</thead>
-
 					<tr>
-						<td id="firstTd">python3말고 2쓰면 혼나나요?ㅜ</td>
-						<td id="second">익명의회원님</td>
-						<td id="third">2021-04-17</td>
+						<th id="title">제목</th>
+						<th class="writer">작성자</th>
+						<th class="date">작성날짜</th>
 					</tr>
-					
-
+					</thead>
+					<c:forEach var="post" items="${postList}">
+						<c:set var="nickName" value="${Member.getNickName(post.memberID)}"/>
+						<tr>
+							<td id="titleTd">${post.title}</td>
+							<td class="writer">${nickName}</td>
+							<td class="date">${post.creationDate}</td>
+						</tr>
+					</c:forEach>
 				</table>
 				<div class="pageButton">
 					<div class="btn-toolbar mb-3 " role="toolbar"

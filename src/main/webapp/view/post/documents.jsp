@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: dongkyu
-  Date: 2021/05/04
-  Time: 8:40 오후
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
@@ -17,6 +10,7 @@
 	<c:set var="loginFlag" value="${sessionScope.login}" />
 	<c:set var="loginFail" value="${requestScope.loginFail}" />
 	<c:set var="registerErrorCode" value="${requestScope.registerErrorCode}" />
+	<c:set var="postList" value="${requestScope.postList}"/>
 
 	<c:choose>
 		<c:when test="${registerErrorCode eq -1}">
@@ -55,23 +49,22 @@
 				<div class="postName">Documents</div>
 				<br>
 				<div class="postDetail">단국대학교 컴퓨터공학과 학생들이 파일들을 공유하기 위한 게시판입니다.</div>
-
 				<table class="type07">
 					<thead>
-						<tr>
-							<th id="first">제목</th>
-							<th id="second">작성자</th>
-							<th id="third">작성날짜</th>
-						</tr>
-					</thead>
-
 					<tr>
-						<td id="firstTd">[iOS] 스위프트 myPlayground 공유</td>
-						<td id="second">우주아빠님</td>
-						<td id="third">2021-05-05</td>
+						<th id="title">제목</th>
+						<th class="writer">작성자</th>
+						<th class="date">작성날짜</th>
 					</tr>
-					
-
+					</thead>
+					<c:forEach var="post" items="${postList}">
+						<c:set var="nickName" value="${Member.getNickName(post.memberID)}"/>
+						<tr>
+							<td id="titleTd">${post.title}</td>
+							<td class="writer">${nickName}</td>
+							<td class="date">${post.creationDate}</td>
+						</tr>
+					</c:forEach>
 				</table>
 				<div class="pageButton">
 					<div class="btn-toolbar mb-3 " role="toolbar"
