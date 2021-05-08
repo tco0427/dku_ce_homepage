@@ -112,6 +112,9 @@ public class Member {
         String name=list.get(6);
         String email=list.get(7);
         String nickname=list.get(8);
+        if(nickname.equals("")){
+            nickname=name;
+        }
 
         return new Member(id,password,email,name,nickname,passwordHint,studentID);
     }
