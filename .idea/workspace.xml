@@ -11,6 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d8d15503-414e-40a5-a36e-0b92df8b6003" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/fragments/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/fragments/footer.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/home.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -247,7 +248,10 @@
       <workItem from="1620291288306" duration="189000" />
       <workItem from="1620369646209" duration="1533000" />
       <workItem from="1620473140429" duration="170000" />
-      <workItem from="1620540609997" duration="1900000" />
+      <workItem from="1620540609997" duration="2076000" />
+      <workItem from="1620543357193" duration="65000" />
+      <workItem from="1620543440345" duration="36000" />
+      <workItem from="1620543492598" duration="7000" />
     </task>
     <task id="LOCAL-00001" summary="Env: change artifactID &amp; name">
       <created>1617810200922</created>
@@ -403,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620541815731</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="refactor: add footer">
+      <created>1620542800966</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1620542800966</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,6 +443,7 @@
     <MESSAGE value="feature: view/post디렉토리의 jsp뷰 파일과 post데이터베이스 연동 구현" />
     <MESSAGE value="fix: fix create Member nickname" />
     <MESSAGE value="feature: add search function" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: add search function" />
+    <MESSAGE value="refactor: add footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: add footer" />
   </component>
 </project>
