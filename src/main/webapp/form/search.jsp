@@ -12,10 +12,10 @@
 <body>
 <div class="b">
   <div class="container-1">
-      <form action="/index.jsp">
-      <input type="text" id="text" placeholder="Search..." />
-      <label for="mySubmit"><i class="fa fa-search"></i></label>
-      <input id="mySubmit" type="submit" value="" style=" background-color: Transparent;
+      <form action="/Search/">
+      <input type="text" id="text" name="query" placeholder="Search..." />
+      <label for="submit"><i class="fa fa-search"></i></label>
+      <input id="submit" type="submit" value="" style=" background-color: Transparent;
     background-repeat:no-repeat;
     border: none;">
     </form>

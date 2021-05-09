@@ -10,6 +10,7 @@ public interface PostRepository {
     public int delete(Integer id);
     public Post findOne(Integer id);
     public List<Post> findAll();
+    public List<Post> findBySearch(String query);
     public List<Post> findByClassification(Classification classification);
     public int update(Post post);
 }
