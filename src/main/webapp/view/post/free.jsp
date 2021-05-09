@@ -86,5 +86,6 @@
 			</div>
 		</div>
 	</div>
+	<jsp:include page="/fragments/menu.jsp"/>
 </body>
 </html>

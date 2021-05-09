@@ -10,36 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8d15503-414e-40a5-a36e-0b92df8b6003" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/dku_ce_homepage_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/dku_ce_homepage_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dku_ce_homepage.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_jsp_api_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__taglibs_standard_1_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_05_05_10_11___Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_05_05_10_11_오후_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/action/SearchAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/SearchController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/searchView.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/PostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/PostRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/PostRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/form/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/form/search.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/home.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +247,7 @@
       <workItem from="1620291288306" duration="189000" />
       <workItem from="1620369646209" duration="1533000" />
       <workItem from="1620473140429" duration="170000" />
-      <workItem from="1620540609997" duration="1090000" />
+      <workItem from="1620540609997" duration="1900000" />
     </task>
     <task id="LOCAL-00001" summary="Env: change artifactID &amp; name">
       <created>1617810200922</created>
@@ -424,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620449219041</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="feature: add search function">
+      <created>1620541815730</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1620541815731</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,6 +431,7 @@
     <MESSAGE value="feature: notice.jsp와 post데이터베이스 연동 구현" />
     <MESSAGE value="feature: view/post디렉토리의 jsp뷰 파일과 post데이터베이스 연동 구현" />
     <MESSAGE value="fix: fix create Member nickname" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: fix create Member nickname" />
+    <MESSAGE value="feature: add search function" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: add search function" />
   </component>
 </project>
