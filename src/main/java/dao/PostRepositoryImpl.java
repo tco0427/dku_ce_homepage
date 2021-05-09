@@ -84,7 +84,29 @@ public class PostRepositoryImpl implements PostRepository{
         }
         return null;
     }
-
+    @Override
+    public List<Post> findBySearch(String query){
+        Connection conn=null;
+        PreparedStatement pstmt=null;
+        ResultSet rs=null;
+        try{
+            conn=getConnection();
+            String sql="select * from post where title=?";
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setString(1,query);
+            rs=pstmt.executeQuery();
+            List<Post> list=new ArrayList<>();
+            while(rs.next()){
+                list.add(createFromResultSet(rs));
+            }
+            return list;
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally{
+            resourceClose(conn,pstmt, rs);
+        }
+        return null;
+    }
     @Override
     public List<Post> findAll() {
         Connection conn=null;
