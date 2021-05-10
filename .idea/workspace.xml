@@ -11,10 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d8d15503-414e-40a5-a36e-0b92df8b6003" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/action/SearchAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/action/SearchAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/action/post/PostListAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/action/post/PostListAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/paging/Paging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paging/Paging.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/form/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/form/search.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/PostRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/PostRepositoryImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +252,8 @@
       <workItem from="1620543440345" duration="36000" />
       <workItem from="1620543492598" duration="94000" />
       <workItem from="1620554363389" duration="57000" />
-      <workItem from="1620622847317" duration="2574000" />
+      <workItem from="1620622847317" duration="2982000" />
+      <workItem from="1620632465740" duration="488000" />
     </task>
     <task id="LOCAL-00001" summary="Env: change artifactID &amp; name">
       <created>1617810200922</created>
@@ -425,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620543578789</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="refactor: modify paging operation">
+      <created>1620631940066</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1620631940066</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,6 +460,7 @@
     <MESSAGE value="fix: fix create Member nickname" />
     <MESSAGE value="feature: add search function" />
     <MESSAGE value="refactor: add footer" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: add footer" />
+    <MESSAGE value="refactor: modify paging operation" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: modify paging operation" />
   </component>
 </project>
