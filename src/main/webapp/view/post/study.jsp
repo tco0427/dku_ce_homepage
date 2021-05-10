@@ -84,5 +84,8 @@
 			</div>
 		</div>
 	</div>
+	<div class="text-center">
+	<jsp:include page="/fragments/footer.jsp" />
+	</div> 
 </body>
 </html>
