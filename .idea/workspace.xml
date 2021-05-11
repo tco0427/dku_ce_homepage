@@ -169,9 +169,7 @@
       </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="dku_ce_homepage:war" />
-        </option>
+        <option name="BuildArtifacts" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -456,6 +454,7 @@
     <MESSAGE value="fix: fix create Member nickname" />
     <MESSAGE value="feature: add search function" />
     <MESSAGE value="refactor: add footer" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: add footer" />
+    <MESSAGE value="fix: .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: .gitignore" />
   </component>
 </project>
