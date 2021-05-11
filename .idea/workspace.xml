@@ -11,9 +11,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d8d15503-414e-40a5-a36e-0b92df8b6003" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/css/post.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/post.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/home.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/post/anonymous.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/post/anonymous.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/post/documents.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/post/documents.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/post/free.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/post/free.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/post/notice.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/post/notice.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/post/study.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/post/study.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -256,7 +260,8 @@
       <workItem from="1620543492598" duration="94000" />
       <workItem from="1620554363389" duration="57000" />
       <workItem from="1620622847317" duration="2574000" />
-      <workItem from="1620633296848" duration="2273000" />
+      <workItem from="1620633296848" duration="2464000" />
+      <workItem from="1620710580147" duration="435000" />
     </task>
     <task id="LOCAL-00001" summary="Env: change artifactID &amp; name">
       <created>1617810200922</created>
@@ -426,7 +431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620543578789</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="fix: paging classification">
+      <created>1620635853376</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1620635853376</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -456,6 +468,7 @@
     <MESSAGE value="fix: fix create Member nickname" />
     <MESSAGE value="feature: add search function" />
     <MESSAGE value="refactor: add footer" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: add footer" />
+    <MESSAGE value="fix: paging classification" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: paging classification" />
   </component>
 </project>
