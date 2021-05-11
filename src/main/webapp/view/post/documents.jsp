@@ -85,6 +85,8 @@
 			</div>
 		</div>
 	</div>
-	<jsp:include page="/fragments/menu.jsp"/>
+	<div class="text-center">
+		<jsp:include page="/fragments/menu.jsp"/>
+	</div>
 </body>
 </html>
