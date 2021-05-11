@@ -45,7 +45,7 @@
 		</div>
 
 		<div>
-			<div class="main">
+			<div class="main" >
 				<div class="postName">Documents</div>
 				<br>
 				<div class="postDetail">단국대학교 컴퓨터공학과 학생들이 파일들을 공유하기 위한 게시판입니다.</div>
@@ -81,12 +81,13 @@
 								onclick="location='/Classification/Document?page=${param.page+1}'">다음</button>
 						</div>
 					</div>
+					
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="text-center">
-		<jsp:include page="/fragments/menu.jsp"/>
-	</div>
+	<jsp:include page="/fragments/footer.jsp" />
+	</div> 
 </body>
 </html>
