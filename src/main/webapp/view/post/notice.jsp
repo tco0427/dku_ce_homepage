@@ -6,6 +6,7 @@
 <head>
 <title>공지게시판</title>
 <link rel="stylesheet" href="/resource/css/post.css">
+
 </head>
 
 <body>
@@ -87,7 +88,7 @@
 		</div>
 	</div>
 	<div class="text-center">
-		<jsp:include page="/fragments/footer.jsp"/>
-	</div>
+	<jsp:include page="/fragments/footer.jsp" />
+	</div> 
 </body>
 </html>
