@@ -46,6 +46,11 @@ public class PostController extends HttpServlet {
             action.execute(request,response);
             RequestDispatcher requestDispatcher=request.getRequestDispatcher("/post.jsp");
             requestDispatcher.forward(request,response);
+        }else if(command.equals("/Post/PostDetail")){
+            action=new PostFindAction();
+            action.execute(request,response);
+            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/view/post/contentDetail.jsp");
+            requestDispatcher.forward(request,response);
         }
     }
 }

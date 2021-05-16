@@ -12,6 +12,7 @@
 </style>
 </head>
 <body>
+
 <div class="menuButton">
    <br><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;<a href="/Classification/Notice" >Notice</a><br>
    <br><i class="fa fa-book" aria-hidden="true"></i>&nbsp;<a href="/Classification/Study" >Study</a><br>
