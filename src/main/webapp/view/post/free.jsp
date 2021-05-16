@@ -61,7 +61,7 @@
 					<c:forEach var="post" items="${postList}">
 						<c:set var="nickName" value="${Member.getNickName(post.memberID)}"/>
 						<tr>
-							<td id="titleTd">${post.title}</td>
+							<td id="titleTd" onclick="location.href='/index.jsp';" style="cursor:pointer;">${post.title}</td>
 							<td class="writer">${nickName}</td>
 							<td class="date">${post.creationDate}</td>
 						</tr>
@@ -72,14 +72,14 @@
 						aria-label="Toolbar with button groups">
 						<div class="btn-group me-2" role="group" aria-label="First group">
 							<button type="button" class="btn btn-outline-secondary"
-								onclick="location='/Classification/Notice?page=${param.page-1}'">이전</button>
+								onclick="location='/Classification/Free?page=${param.page-1}'">이전</button>
 							<c:forEach var="i" begin="${requestScope.blockNum}"
 								end="${requestScope.blockNum+9}">
 								<button type="button" class="btn btn-outline-secondary"
-									onclick="location='/Classification/Notice?page=${i}'">${i}</button>
+									onclick="location='/Classification/Free?page=${i}'">${i}</button>
 							</c:forEach>
 							<button type="button" class="btn btn-outline-secondary"
-								onclick="location='/Classification/Notice?page=${param.page+1}'">다음</button>
+								onclick="location='/Classification/Free?page=${param.page+1}'">다음</button>
 						</div>
 					</div>
 				</div>

@@ -61,7 +61,7 @@
 					<c:forEach var="post" items="${postList}">
 						<c:set var="nickName" value="${Member.getNickName(post.memberID)}"/>
 						<tr>
-							<td id="titleTd">${post.title}</td>
+							<td id="titleTd" onclick="location.href='/index.jsp';" style="cursor:pointer;">${post.title}</td>
 							<td class="writer">${nickName}</td>
 							<td class="date">${post.creationDate}</td>
 						</tr>

@@ -1,11 +1,16 @@
 package action.post;
 
 import action.Action;
+import dao.CommentRepository;
+import dao.CommentRepositoryImpl;
 import dao.PostRepository;
 import dao.PostRepositoryImpl;
+import dto.Comment;
+import dto.Post;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 public class PostFindAction implements Action {
     @Override
@@ -18,8 +23,16 @@ public class PostFindAction implements Action {
         }
 
         PostRepository postRepository= PostRepositoryImpl.getInstance();
-        request.setAttribute("post",postRepository.findOne(id));
+        CommentRepository commentRepository= CommentRepositoryImpl.getInstance();
+
+
+        Post post = postRepository.findOne(id);
+
+        List<Comment> commentList = commentRepository.findByPost(id);
+
+
+        request.setAttribute("post",post);
+        request.setAttribute("commentList",commentList);
         request.setAttribute("postId",id);
-        //--test
     }
 }

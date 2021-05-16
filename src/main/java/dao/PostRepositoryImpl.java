@@ -91,7 +91,7 @@ public class PostRepositoryImpl implements PostRepository{
         ResultSet rs=null;
         try{
             conn=getConnection();
-            String sql="select * from post where title=?";
+            String sql="select * from post where title=? order by creationDate desc";
             pstmt=conn.prepareStatement(sql);
             pstmt.setString(1,query);
             rs=pstmt.executeQuery();
@@ -114,7 +114,7 @@ public class PostRepositoryImpl implements PostRepository{
         ResultSet rs=null;
         try{
             conn=getConnection();
-            String sql="select * from post order by postPK";
+            String sql="select * from post order by postPK order by creationDate desc";
             pstmt=conn.prepareStatement(sql);
             rs=pstmt.executeQuery();
             List<Post> list=new ArrayList<>();
@@ -137,7 +137,7 @@ public class PostRepositoryImpl implements PostRepository{
         ResultSet rs=null;
         try{
             conn=getConnection();
-            String sql="select * from post where classification=?";
+            String sql="select * from post where classification=? order by creationDate desc";
             pstmt=conn.prepareStatement(sql);
             pstmt.setString(1,classification.toString());
             rs=pstmt.executeQuery();
