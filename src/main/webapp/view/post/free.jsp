@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="dto.Member" %>
 <html>
 <head>
 <title>자유게시판</title>
@@ -61,7 +62,7 @@
 					<c:forEach var="post" items="${postList}">
 						<c:set var="nickName" value="${Member.getNickName(post.memberID)}"/>
 						<tr>
-							<td id="titleTd" onclick="location.href='/index.jsp';" style="cursor:pointer;">${post.title}</td>
+							<td id="titleTd" onclick="location.href='/Post/PostDetail?id=${post.id}';" style="cursor:pointer;">${post.title}</td>
 							<td class="writer">${nickName}</td>
 							<td class="date">${post.creationDate}</td>
 						</tr>

@@ -108,9 +108,8 @@ table.type07 td {
 }
 
 .text-center{
-    position:absolute;
-    bottom:0px;
-    width: 100%;
-    text-align: center;
-    font-family: "바탕";
+	float: right;
+	width: 100%;
+	text-align: center;	
+	font-family: "바탕";
 }

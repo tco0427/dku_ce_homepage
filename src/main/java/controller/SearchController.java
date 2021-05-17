@@ -28,7 +28,7 @@ public class SearchController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         Action action=null;
-        if(command.equals("/Search/")){
+        if(command.equals("/Search")){
             action=new SearchAction();
             action.execute(request,response);
             RequestDispatcher requestDispatcher=request.getRequestDispatcher("/view/searchView.jsp");

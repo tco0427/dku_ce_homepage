@@ -12,16 +12,9 @@
 <body>
 	<c:set var="loginFlag" value="${sessionScope.login}" />
 	<c:set var="loginFail" value="${requestScope.loginFail}" />
-	<c:set var="registerErrorCode" value="${requestScope.registerErrorCode}" />
-	<c:set var="postList" value="${requestScope.postList}"/>
+	<c:set var="postList" value="${requestScope.post}"/>
 
 	<c:choose>
-		<c:when test="${registerErrorCode eq -1}">
-        	out.println("<script>alert('회원가입에 실패하였습니다.'); history.go(-1);</script>");
-    	</c:when>
-		<c:when test="${registerErrorCode eq -10}">
-        	out.println("<script>alert('이미 존재하는 아이디입니다.'); history.go(-1);</script>
-		</c:when>
 		<c:when test="${loginFail eq true}">
         	out.println("<script>alert('로그인에 실패하였습니다.'); window.location='/index.jsp';</script>");
     	</c:when>
@@ -48,16 +41,19 @@
 		</div>
 		<div>
 			<div class="main">
-				<div class="postCategory"> | Notice</div>
-				<div class="postName">게시글 제목</div>
+				<c:set var="post" value="${requestScope.post}"/>
+				<c:set var="nickName" value="${Member.getNickName(post.memberID)}"/>
+
+				<div class="postCategory"> | ${post.classification}</div>
+				<div class="postName">${post.title}</div>
 				<div class="userProfile">
     				<i class="fa fa-user fa-2x" aria-hidden="true"></i>
 				</div>
-				<div class="user">사용자이름</div>
-				<div class="date">2021.05.11</div>
+				<div class="user">${nickName}</div>
+				<div class="date">${post.creationDate}</div>
 				<hr>
 				<div class="content">
-				게시글 내용 - 여러분 오늘은 무엇을 할 계획인가요~~? 전 p형이라 계획같은 건 안세운답니다~~ㅎ
+				${post.content}
 				</div>
 				<div class="like">
 					<i class="fa fa-heart-o" aria-hidden="true"></i> 좋아요 10개
