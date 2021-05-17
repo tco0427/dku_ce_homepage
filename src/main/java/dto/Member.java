@@ -2,10 +2,14 @@ package dto;
 
 import dao.MemberRepository;
 import dao.MemberRepositoryImpl;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Getter
+@Setter
 public class Member {
     public static final List<String> passwordHintQuestion= Arrays.asList("다른 이메일 주소는?", "나의 애완동물 이름은?","나의 아버지 성함은?", "나의 어머니 성함은?", "나의 별명은?", "나의 좌우명은?");
     private String id;
@@ -28,64 +32,54 @@ public class Member {
         this.passwordHint = passwordHint;
         this.studentID = studentID;
     }
-
+    
     public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    public String getPasswordHint() {
-        return passwordHint;
-    }
-
-    public void setPasswordHint(String passwordHint) {
-        this.passwordHint = passwordHint;
-    }
-
-    public Integer getStudentID() {
-        return studentID;
-    }
-
-    public void setStudentID(Integer studentID) {
-        this.studentID = studentID;
-    }
-
-    @Override
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	public String getPasswordHint() {
+		return passwordHint;
+	}
+	public void setPasswordHint(String passwordHint) {
+		this.passwordHint = passwordHint;
+	}
+	public Integer getStudentID() {
+		return studentID;
+	}
+	public void setStudentID(Integer studentID) {
+		this.studentID = studentID;
+	}
+	public static List<String> getPasswordhintquestion() {
+		return passwordHintQuestion;
+	}
+	
+	@Override
     public String toString() {
         return "Member{" +
                 "id=" + id +

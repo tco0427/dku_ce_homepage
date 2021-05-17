@@ -1,43 +1,43 @@
 /* * {
 	font-family: "나눔고딕";
-}*/
+} */
 .container{
-text-align:center;
+    text-align:center;
 }
 .postName {
-	
-	font-size: 30px;
-	text-decoration: underline;
-	text-underline-position: under;
+
+    font-size: 30px;
+    text-decoration: underline;
+    text-underline-position: under;
 }
 
 .postDetail{
-	margin-top: -10px;
-	margin-bottom: 40px;
-	
+    margin-top: -10px;
+    margin-bottom: 40px;
+
 }
 table{
 
-width:90%;
+    width:90%;
 }
-table.type07 {	
-  border-collapse: collapse;
-  text-align: left;
-  line-height: 1.5;
-  
-  margin: 20px 10px;
+table.type07 {
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+
+    margin: 20px 10px;
 }
 table.type07 thead {
-  border-top: 3px solid #72757a;
-  border-bottom: 1px solid #72757a;
-  /* background: #ece6cc; */
+    border-top: 3px solid #72757a;
+    border-bottom: 1px solid #72757a;
+    /* background: #ece6cc; */
 }
 table.type07 thead th {
-  /* padding: 10px; */
-  text-align: center;
-  font-weight: bold;
-  vertical-align: top;
-  color: #392f31;
+    /* padding: 10px; */
+    text-align: center;
+    font-weight: bold;
+    vertical-align: top;
+    color: #392f31;
 }
 
 
@@ -47,19 +47,19 @@ table.type07 thead th {
 .date {width:20%;}
 
 table.type07 tbody th {
-  width: 150px;
-  /* padding: 10px; */
-  font-weight: bold;
-  vertical-align: top;
-  border-bottom: 1px solid #ccc;
-  /* background: #fcf1f4; */
+    width: 150px;
+    /* padding: 10px; */
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    /* background: #fcf1f4; */
 }
 table.type07 td {
-  /* width: 350px; */
-  padding: 10px;
-  vertical-align: top;
-  text-align: center;
-  border-bottom: 1px solid #ccc;
+    /* width: 350px; */
+    padding: 10px;
+    vertical-align: top;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
 }
 
 .all {
@@ -98,6 +98,7 @@ table.type07 td {
 }
 
 .pageButton {
+
 	
 	height: 20px;
 	position: absolute;
@@ -105,7 +106,10 @@ table.type07 td {
 	
 	bottom: 20px;
 }
+
 .text-center{
-	position:absolute;
-	bottom:0px;
+	float: right;
+	width: 100%;
+	text-align: center;	
+	font-family: "바탕";
 }
