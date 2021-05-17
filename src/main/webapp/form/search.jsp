@@ -12,7 +12,7 @@
 <body>
 <div class="b">
   <div class="container-1">
-      <form action="/Search">
+      <form action="/Search/">
       <input type="text" id="text" name="query" placeholder="Search..." />
       <label for="submit"><i class="fa fa-search"></i></label>
       <input id="submit" type="submit" value="" style=" background-color: Transparent;

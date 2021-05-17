@@ -16,9 +16,7 @@ public class SearchAction implements Action{
         PostRepository postRepository= PostRepositoryImpl.getInstance();
         List<Post> postList=postRepository.findBySearch(request.getParameter("query"));
         List<Post> resultList=new ArrayList<>();
-
         int blockNum = Paging.getPage(postList, request.getParameter("page"),resultList);
-
 
         request.setAttribute("postList",resultList);
         request.setAttribute("blockNum", blockNum);
