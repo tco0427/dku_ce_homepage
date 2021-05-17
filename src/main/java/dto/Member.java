@@ -32,8 +32,54 @@ public class Member {
         this.passwordHint = passwordHint;
         this.studentID = studentID;
     }
-
-    @Override
+    
+    public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	public String getPasswordHint() {
+		return passwordHint;
+	}
+	public void setPasswordHint(String passwordHint) {
+		this.passwordHint = passwordHint;
+	}
+	public Integer getStudentID() {
+		return studentID;
+	}
+	public void setStudentID(Integer studentID) {
+		this.studentID = studentID;
+	}
+	public static List<String> getPasswordhintquestion() {
+		return passwordHintQuestion;
+	}
+	
+	@Override
     public String toString() {
         return "Member{" +
                 "id=" + id +
