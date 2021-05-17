@@ -40,7 +40,7 @@
 			<jsp:include page="/fragments/menu.jsp" />
 		</div>
 		<div>
-			<div class="main">
+			<div class="main" style="height: auto;">
 				<c:set var="post" value="${requestScope.post}"/>
 				<c:set var="nickName" value="${Member.getNickName(post.memberID)}"/>
 
