@@ -88,7 +88,7 @@
 				
 				<div class="">
 					
-					<textarea name="content" cols="85" rows="4" class="comment" placeholder="댓글을 입력해주세요" required></textarea>
+					<textarea name="content" cols="75" rows="4" class="comment" placeholder="댓글을 입력해주세요" required></textarea>
 					
 					<button type="submit" class="submitBtn">등록</button>
 					
@@ -98,8 +98,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="text-center">
+	<%-- <div class="text-center">
 		<jsp:include page="/fragments/footer.jsp"/>
-	</div>
+	</div> --%>
 </body>
 </html>
