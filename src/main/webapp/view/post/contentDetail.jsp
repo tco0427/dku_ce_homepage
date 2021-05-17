@@ -61,7 +61,7 @@
 					<i class="fa fa-heart-o" aria-hidden="true"></i> 좋아요 10개
 				</div>
 				<div class="comment-icon">
-					<i class="fa fa-comment-o" aria-hidden="true"></i> 댓글 2개
+					<i class="fa fa-comment-o" aria-hidden="true"></i> 댓글 ${requestScope.commentList.size()}개
 				</div>
 				<hr>
 
