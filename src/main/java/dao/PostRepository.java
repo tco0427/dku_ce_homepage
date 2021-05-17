@@ -13,4 +13,5 @@ public interface PostRepository {
     public List<Post> findBySearch(String query);
     public List<Post> findByClassification(Classification classification);
     public int update(Post post);
+    public Post findRecentPost();
 }

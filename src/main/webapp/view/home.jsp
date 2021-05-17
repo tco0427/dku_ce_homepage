@@ -1,5 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="dao.PostRepositoryImpl" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,13 +47,14 @@
         <jsp:include page="/fragments/menu.jsp"/>
     </div>
     <div class="main">
-
         <div class="title">
             단국대학교 SW융합대학 컴퓨터공학과<br>
             <hr size="2" width="330px" color="black" align="left">
-            <img src="/resource/img/bear.png" width="300px" style="margin-left:17px;"><br>
+            <img src="/resource/img/bear.png" width="300px"><br>
             <div class="description">
-                컴퓨터공학과는 2018년도부터 SW융합대학에 소속.<br>ICT관과 제 2공학관을 주로 이용한다.<br> 코딩이랑 이거저거 배운다. 환영한다.<br>
+                단국대학교 컴퓨터공학과 커뮤니티에 오신 것을 환영합니다!<br>
+                컴퓨터공학과는 컴퓨터공학의 지식을 로봇, 영상, 통신 등 다양한 IT 분야에 활용할 수 있는 능력을 갖춘 인재를 배출하여 사회에 기여함을 목표로 합니다.<br>
+                이를 위해 컴퓨터공학의 이론을 습득하고 실제 시스템을 구현할 수 있는 능력을 배양하며 로봇, 영상, 통신 등 활용 분야의 지식을 이해할 수 있는 교육 과정을 운영합니다.
             </div>
         </div>
 
@@ -60,16 +63,22 @@
                 Notice<br>
                 <hr size="2" width="60px" color="black" align="left">
             </div>
-            <div class="description">공지사항</div>
-            <div class="bar">
-                &nbsp;&nbsp;제목&nbsp;&nbsp;작성자 작성날짜
+
+            <div>
+                <c:set var="post" value="${PostRepositoryImpl.getInstance().findRecentPost()}"/>
+
+                <div class="postName" style="font-weight: bold">${post.title}</div>
+                <div class="date">[${post.creationDate}]</div>
+                <hr>
+                <div class="content">
+                    ${post.content}
+                </div>
             </div>
         </div>
     </div>
 </div>
 <div class="text-center">
 	<jsp:include page="/fragments/footer.jsp" />
-	</div> 
-
+	</div>
 </body>
 </html>

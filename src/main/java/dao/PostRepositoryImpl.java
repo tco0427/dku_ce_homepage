@@ -129,7 +129,26 @@ public class PostRepositoryImpl implements PostRepository{
         }
         return null;
     }
-
+    @Override
+    public Post findRecentPost(){
+        Connection conn=null;
+        PreparedStatement pstmt=null;
+        ResultSet rs=null;
+        try{
+            conn=getConnection();
+            String sql="select * from post where classification='notice' order by creationDate DESC limit 1";
+            pstmt=conn.prepareStatement(sql);
+            rs=pstmt.executeQuery();
+            rs.next();
+            Post post=createFromResultSet(rs);
+            return post;
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally{
+            resourceClose(conn,pstmt, rs);
+        }
+        return null;
+    }
     @Override
     public List<Post> findByClassification(Classification classification) {
         Connection conn=null;
