@@ -62,35 +62,44 @@
 					<i class="fa fa-comment-o" aria-hidden="true"></i> 댓글 2개
 				</div>
 				<hr>
+
 				<div class="comment-title">댓글</div>
-				
-				<div class="userProfile">
-    				<i class="fa fa-user fa-2x" aria-hidden="true"></i>
-				</div>
-				<div class="user-comment">사용자이름</div>
-				<div class="comment">댓글 내용</div>
-				<div class="date-comment">2021.05.11</div>
-				<hr style="border: 1px dashed lightgrey;">
-				
-				<div class="userProfile">
-    				<i class="fa fa-user fa-2x" aria-hidden="true"></i>
-				</div>
-				<div class="user-comment">박진아</div>
-				<div class="comment">드라이브 슝슝가고싶당</div>
-				<div class="date-comment">2021.05.11</div>
-				<hr style="border: 1px dashed lightgrey;">
-				
-				<form action="댓글작성액션" method="댓글메소드" accept-charset="UTF-8">
-				
-				<div class="">
-					
-					<textarea name="content" cols="75" rows="4" class="comment" placeholder="댓글을 입력해주세요" required></textarea>
-					
-					<button type="submit" class="submitBtn">등록</button>
-					
-				</div>
-			</form>
-				
+				<c:set var="commentList" value="${requestScope.commentList}"/>
+				<c:forEach var="comment" items="${commentList}">
+					<c:set var="nickName" value="${Member.getNickName(comment.memberId)}"/>
+					<div class="userProfile">
+						<i class="fa fa-user fa-2x" aria-hidden="true"></i>
+					</div>
+					<div class="user-comment">${nickName}</div>
+					<div class="comment">${comment.content}</div>
+					<div class="date-comment">${comment.date}</div>
+					<hr style="border: 1px dashed lightgrey;">
+				</c:forEach>
+				<c:choose>
+					<c:when test="${loginFlag eq null}">
+
+					</c:when>
+					<c:when test="${loginFlag eq 'success'}">
+						<form action="/Comment/Create" method="post" accept-charset="UTF-8">
+							<div>
+								<input name="postId" type="text" value="${post.id}"
+									   style="display: none; visibility: hidden;">
+							</div>
+							<div>
+								<input name="memberId" type="text" value="${sessionScope.id}"
+									   style="display: none; visibility: hidden;">
+							</div>
+							<div>
+								<input name="url" type="text" value="${pageContext.request.requestURL}"
+									   style="display: none; visibility: hidden;">
+							</div>
+							<div class="">
+								<textarea name="content" cols="75" rows="4" class="comment" placeholder="댓글을 입력해주세요" required></textarea>
+								<button type="submit" class="submitBtn">등록</button>
+							</div>
+						</form>
+					</c:when>
+				</c:choose>
 			</div>
 		</div>
 	</div>

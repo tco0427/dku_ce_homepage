@@ -23,13 +23,11 @@ public class PostFindAction implements Action {
         }
 
         PostRepository postRepository= PostRepositoryImpl.getInstance();
-        CommentRepository commentRepository= CommentRepositoryImpl.getInstance();
-
-
         Post post = postRepository.findOne(id);
 
-        List<Comment> commentList = commentRepository.findByPost(id);
 
+        CommentRepository commentRepository= CommentRepositoryImpl.getInstance();
+        List<Comment> commentList = commentRepository.findByPost(id);
 
         request.setAttribute("post",post);
         request.setAttribute("commentList",commentList);

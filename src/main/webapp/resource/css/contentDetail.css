@@ -13,7 +13,7 @@
 }
 .main {
     width: 700px;
-    height: 1000px;
+    height: auto;
     border: 5px solid lightgrey;
     padding: 20px;
     margin-top: 10px;

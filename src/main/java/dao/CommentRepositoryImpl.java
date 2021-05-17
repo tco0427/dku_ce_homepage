@@ -24,8 +24,8 @@ public class CommentRepositoryImpl implements CommentRepository{
             conn=getConnection();
             String sql="insert into comment(memberID,postPK,creationDate,content) values (?,?,?,?)";
             pstmt=conn.prepareStatement(sql);
-            pstmt.setString(1,comment.getMemberID());
-            pstmt.setInt(2,comment.getPostID());
+            pstmt.setString(1,comment.getMemberId());
+            pstmt.setInt(2,comment.getPostId());
             pstmt.setDate(3,comment.getDate());
             pstmt.setString(4,comment.getContent());
             return pstmt.executeUpdate();
@@ -136,6 +136,7 @@ public class CommentRepositoryImpl implements CommentRepository{
             conn=getConnection();
             String sql="select * from comment where postPk=?";
             pstmt=conn.prepareStatement(sql);
+            pstmt.setInt(1,id);
             rs=pstmt.executeQuery();
             List<Comment> list=new ArrayList<>();
             while(rs.next()){
