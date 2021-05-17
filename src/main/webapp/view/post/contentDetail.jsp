@@ -67,16 +67,15 @@
 				</div>
 				<hr>
 				<div class="comment-title">댓글</div>
-				<c:forEach>
-					<div class="userProfile">
-						<i class="fa fa-user fa-2x" aria-hidden="true"></i>
-					</div>
-					<div class="user-comment">사용자이름</div>
-					<div class="comment">댓글 내용</div>
-					<div class="date-comment">2021.05.11</div>
-					<hr style="border: 1px dashed lightgrey;">
-				</c:forEach>
-
+				
+				<div class="userProfile">
+    				<i class="fa fa-user fa-2x" aria-hidden="true"></i>
+				</div>
+				<div class="user-comment">사용자이름</div>
+				<div class="comment">댓글 내용</div>
+				<div class="date-comment">2021.05.11</div>
+				<hr style="border: 1px dashed lightgrey;">
+				
 				<div class="userProfile">
     				<i class="fa fa-user fa-2x" aria-hidden="true"></i>
 				</div>
@@ -84,18 +83,17 @@
 				<div class="comment">드라이브 슝슝가고싶당</div>
 				<div class="date-comment">2021.05.11</div>
 				<hr style="border: 1px dashed lightgrey;">
-
-
-				<form action="댓글작성액션" method="post" accept-charset="UTF-8">
-
-					<div class="">
-
-						<textarea name="content" cols="85" rows="4" class="comment" placeholder="댓글을 입력해주세요" required></textarea>
-
-						<button type="submit" class="submitBtn">등록</button>
-
-					</div>
-				</form>
+				
+				<form action="댓글작성액션" method="댓글메소드" accept-charset="UTF-8">
+				
+				<div class="">
+					
+					<textarea name="content" cols="85" rows="4" class="comment" placeholder="댓글을 입력해주세요" required></textarea>
+					
+					<button type="submit" class="submitBtn">등록</button>
+					
+				</div>
+			</form>
 				
 			</div>
 		</div>
