@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="dku_ce_homepage:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>dku_ce_homepage</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="dku_ce_homepage-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="dku_ce_homepage:war exploded" />
+    </root>
+  </artifact>
+</component>
