@@ -24,6 +24,55 @@ public class Comment {
 		this.content = content;
 	}
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getMemberId() {
+		return memberId;
+	}
+
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
+	}
+
+	public Integer getPostId() {
+		return postId;
+	}
+
+	public void setPostId(Integer postId) {
+		this.postId = postId;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public Comment(Integer id, String memberId, Integer postId, Date date, String content) {
+		super();
+		this.id = id;
+		this.memberId = memberId;
+		this.postId = postId;
+		this.date = date;
+		this.content = content;
+	}
+
 	public static Comment createComment(List<String> list){
 		String memberId=list.get(0);
 		Integer postId=Integer.parseInt(list.get(1));

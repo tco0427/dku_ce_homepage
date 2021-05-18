@@ -7,8 +7,25 @@
 <title>자세히보기</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/resource/css/contentDetail.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script> -->
+
+<style>
+.commentSubmit {
+	background-color: rgb(128, 128, 128);
+  	border: none;
+  	border-radius:5px;
+  	color: white; 
+  	padding: 10px 15px;
+  	text-align: center;
+  	text-decoration: none;
+  	/* display: inline-block; */
+  	font-size: 12px;
+  	float:right;
+  	/* margin-top: -20px; */
+  	position: relative; left:-10px; top: -50px;
+}
+</style>
 </head>
 
 <body>
@@ -96,10 +113,9 @@
 									   style="display: none; visibility: hidden;">
 							</div>
 							<div class="">
-								<textarea name="content" cols="75" rows="4" class="comment" placeholder="댓글을 입력해주세요" required></textarea>
+								<textarea name="content" cols="98" rows="4" class="comment" placeholder="댓글을 입력해주세요" required></textarea>
 							</div>
-							<br>
-							<button type="submit" class="btn btn-secondary">등록</button>
+							<button type="submit" class="commentSubmit">등록</button>
 						</form>
 					</c:when>
 				</c:choose>

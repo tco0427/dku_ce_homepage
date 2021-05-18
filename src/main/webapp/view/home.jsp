@@ -50,26 +50,28 @@
         <div class="title">
             단국대학교 SW융합대학 컴퓨터공학과<br>
             <hr size="2" width="330px" color="black" align="left">
-            <img src="/resource/img/bear.png" width="300px"><br>
-            <div class="description">
-                단국대학교 컴퓨터공학과 커뮤니티에 오신 것을 환영합니다!<br>
-                컴퓨터공학과는 컴퓨터공학의 지식을 로봇, 영상, 통신 등 다양한 IT 분야에 활용할 수 있는 능력을 갖춘 인재를 배출하여 사회에 기여함을 목표로 합니다.<br>
-                이를 위해 컴퓨터공학의 이론을 습득하고 실제 시스템을 구현할 수 있는 능력을 배양하며 로봇, 영상, 통신 등 활용 분야의 지식을 이해할 수 있는 교육 과정을 운영합니다.
-            </div>
+            <img src="/resource/img/bear.png" width="333px"><br>
+            <div style="font-size:16px;">컴퓨터공학과 커뮤니티에 오신 것을 환영합니다:-)<br><p></p></div>
+        </div>
+        <div class="description">
+           <p/>컴퓨터공학과는 컴퓨터공학의 지식을 로봇, 영상, 통신 등 다양한 IT 분야에 활용할 수 있는 능력을 갖춘 인재를 배출하여 사회에 기여함을 목표로 합니다.
+           이를 위해 컴퓨터공학의 이론을 습득하고 실제 시스템을 구현할 수 있는 능력을 배양하며 로봇, 영상, 통신 등 활용 분야의 지식을 이해할 수 있는 교육 과정을 운영합니다.
         </div>
 
         <div class="notice">
             <div style="font-size: 20px;font-weight: 400;margin-top: 10px;">
-                Notice<br>
-                <hr size="2" width="60px" color="black" align="left">
+               Latest Notice<br>
+                <hr size="2" width="116px" color="black" align="left">
             </div>
 
             <div>
                 <c:set var="post" value="${PostRepositoryImpl.getInstance().findRecentPost()}"/>
 
-                <div class="postName" style="font-weight: bold">${post.title}</div>
-                <div class="date">[${post.creationDate}]</div>
-                <hr>
+                <div class="postName" style="font-weight: bold;margin-bottom:5px;">${post.title}</div>
+                <div class="user" style="float:left;">작성자 : ${post.memberID}</div>
+                <div class="date" style="font-size:10px; margin-left:5px; margin-top:10px;">[${post.creationDate}]</div>
+                
+                <hr style="border: 1px dashed lightgrey;">
                 <div class="content">
                     ${post.content}
                 </div>
