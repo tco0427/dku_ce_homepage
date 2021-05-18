@@ -8,7 +8,6 @@ import java.util.List;
 @Getter //Getter
 @Setter //Setter
 @NoArgsConstructor  //Default Constructor
-@AllArgsConstructor //Constructor
 @ToString
 public class Comment {
     private Integer id;
@@ -21,46 +20,6 @@ public class Comment {
 		this.memberId = memberId;
 		this.postId=postId;
 		this.date=date;
-		this.content = content;
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getMemberId() {
-		return memberId;
-	}
-
-	public void setMemberId(String memberId) {
-		this.memberId = memberId;
-	}
-
-	public Integer getPostId() {
-		return postId;
-	}
-
-	public void setPostId(Integer postId) {
-		this.postId = postId;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-	public String getContent() {
-		return content;
-	}
-
-	public void setContent(String content) {
 		this.content = content;
 	}
 

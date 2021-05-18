@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="dao.PostRepositoryImpl" %>
-
+<%@ page import="dto.Member"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,9 +66,9 @@
 
             <div>
                 <c:set var="post" value="${PostRepositoryImpl.getInstance().findRecentPost()}"/>
-
+                <c:set var="nickName" value="${Member.getNickName(post.memberID)}"/>
                 <div class="postName" style="font-weight: bold;margin-bottom:5px;">${post.title}</div>
-                <div class="user" style="float:left;">작성자 : ${post.memberID}</div>
+                <div class="user" style="float:left;">작성자 : ${nickName}&nbsp;</div>
                 <div class="date" style="font-size:10px; margin-left:5px; margin-top:10px;">[${post.creationDate}]</div>
                 
                 <hr style="border: 1px dashed lightgrey;">
