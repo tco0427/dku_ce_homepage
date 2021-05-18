@@ -69,18 +69,13 @@
 					</c:forEach>
 				</table>
 				<div class="pageButton">
-					<div class="btn-toolbar mb-3 " role="toolbar"
-						aria-label="Toolbar with button groups">
-						<div class="btn-group me-2" role="group" aria-label="First group">
-							<button type="button" class="btn btn-outline-secondary"
-								onclick="location='/Classification/Notice?page=${param.page-1}'">이전</button>
-							<c:forEach var="i" begin="${requestScope.blockNum}"
-								end="${requestScope.blockNum+9}">
-								<button type="button" class="btn btn-outline-secondary"
-									onclick="location='/Classification/Notice?page=${i}'">${i}</button>
+					<div class="" role="toolbar" aria-label="Toolbar with button groups">
+						<div class="" role="group" aria-label="First group">
+							<button type="button" class="previous" onclick="location='/Classification/Notice?page=${param.page-1}'">이전</button>
+							<c:forEach var="i" begin="${requestScope.blockNum}" end="${requestScope.blockNum+9}">
+								<button type="button" class="number" onclick="location='/Classification/Notice?page=${i}'">${i}</button>
 							</c:forEach>
-							<button type="button" class="btn btn-outline-secondary"
-								onclick="location='/Classification/Notice?page=${param.page+1}'">다음</button>
+							<button type="button" class="next" onclick="location='/Classification/Notice?page=${param.page+1}'">다음</button>
 						</div>
 					</div>
 				</div>

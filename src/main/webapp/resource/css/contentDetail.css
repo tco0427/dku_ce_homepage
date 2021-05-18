@@ -70,3 +70,20 @@
 	color:rgb(128, 128, 128);
 	margin-left: 40px;
 }
+.comment {
+	position: relative;
+} 
+.commentSubmit {
+	background-color: rgb(128, 128, 128);
+  	border: none;
+  	border-radius:5px;
+  	color: white; 
+  	padding: 10px 15px;
+  	text-align: center;
+  	text-decoration: none;
+  	/* display: inline-block; */
+  	font-size: 12px;
+  	float:right;
+  	/* margin-top: -20px; */
+  	position: relative; left:-10px; top: -50px;
+}

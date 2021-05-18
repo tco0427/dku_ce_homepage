@@ -33,11 +33,14 @@
     font-size: 20px;
     font-weight: 400;
     margin-top: 10px;
+    margin-left:190px;
 }
 .description {
     font-size: 15px;
     display: inline-block;
-    text-align: center;
+    padding:5px;
+   	line-height: 20px;
+   	background-color:#F2F1F1;
 }
 .text-center{
 	float: right;
