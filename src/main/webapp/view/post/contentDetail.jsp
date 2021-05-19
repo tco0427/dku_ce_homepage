@@ -75,7 +75,11 @@
 				${post.content}
 				</div>
 				<div class="like">
-					<i class="fa fa-heart-o" aria-hidden="true"></i> 좋아요 10개
+					<c:choose>
+						<c:when test="${post.attachFile ne null}">
+							<a href="" download="${post.attachFile}">다운로드</a>
+						</c:when>
+					</c:choose>
 				</div>
 				<div class="comment-icon">
 					<i class="fa fa-comment-o" aria-hidden="true"></i> 댓글 ${requestScope.commentList.size()}개

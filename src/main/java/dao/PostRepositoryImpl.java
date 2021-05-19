@@ -216,7 +216,10 @@ public class PostRepositoryImpl implements PostRepository{
             createDate=rs.getDate("creationDate");
             classificationString=rs.getString("classification");
             classification=Classification.valueOf(classificationString);
-            attachFile=rs.getBytes("attachFile");
+            Blob blob=rs.getBlob("attachFile");
+            if(blob!=null){
+                attachFile=blob.getBytes(1,(int)blob.length());
+            }
         }catch(SQLException e){
             e.printStackTrace();
         }
