@@ -47,7 +47,7 @@
 		</div>
 
 		<div class="main">
-			<form action="/Post/PostCreate" method="post" accept-charset="UTF-8"
+			<form action="/Post/PostCreate" method="post" enctype="Multipart/form-data" accept-charset="UTF-8"
 				style="margin: 15px;">
 				<div>
 					<input name="memberId" type="text" value="${memberId}"
@@ -77,7 +77,7 @@
 						<label for="fileUpload">
 							<i class="fa fa-folder-o" aria-hidden="true"></i>
 						</label>
-						<input id="fileUpload" type="file">
+						<input id="fileUpload" type="file" name="attachFile">
 						<button type="submit" class="submitBtn">등록</button>
 					</div>
 					<textarea name="content" cols="40" rows="100" class="content" placeholder="내용을 입력해주세요" required></textarea>
