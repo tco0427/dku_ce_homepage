@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="dku_ce_homepage" target="1.8" />
+      <module name="dku_ce_homepage" target="9" />
     </bytecodeTargetLevel>
   </component>
 </project>

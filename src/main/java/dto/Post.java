@@ -17,10 +17,11 @@ public class Post {
     private String content;
     private Date creationDate;
     private Classification classification;
+    private byte[] attachFile;
 
 
 	public Post(Integer id, String memberID, String title, String content, Date creationDate,
-			Classification classification) {
+                Classification classification, byte[] attachFile) {
 		super();
 		this.id = id;
 		this.memberID = memberID;
@@ -28,24 +29,25 @@ public class Post {
 		this.content = content;
 		this.creationDate = creationDate;
 		this.classification = classification;
+		this.attachFile=attachFile;
 	}
 
 
-	public Post( String memberID, String title, String content, Date creationDate, Classification classification) {
+	public Post( String memberID, String title, String content, Date creationDate, Classification classification,byte[] attachFile) {
         this.memberID = memberID;
         this.title = title;
         this.content = content;
         this.creationDate = creationDate;
         this.classification = classification;
+        this.attachFile=attachFile;
     }
 
-    public static Post createPost(List<String> list){
+    public static Post createPost(List<String> list,byte[] attachFile){
         String memberId=list.get(0);
         String title=list.get(1);
         String content=list.get(2);
         Date creationDate=new Date(System.currentTimeMillis());
         Classification classification=Classification.valueOf(list.get(3));
-
-        return new Post(memberId,title,content,creationDate,classification);
+        return new Post(memberId,title,content,creationDate,classification,attachFile);
     }
 }

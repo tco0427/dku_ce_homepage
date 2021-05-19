@@ -1,30 +1,59 @@
 package action.post;
 
 import action.Action;
+import com.oreilly.servlet.MultipartRequest;
 import dao.PostRepository;
 import dao.PostRepositoryImpl;
 import dto.Post;
 
+import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PostCreateAction implements Action {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
+
+        String savePath = request.getSession().getServletContext().getRealPath("/");
         List<String> list=new ArrayList<>();
-        String memberId = request.getParameter("memberId");
-        String title = request.getParameter("title");
-        String content = request.getParameter("content");
-        String classification = request.getParameter("classification");
+        String memberId = null;
+        String title = null;
+        String content = null;
+        String classification = null;
+        String filePath=null;
+        byte[] attachFile=null;
+        ServletInputStream reader = null;
+        int sizeLimit=1024*1024*1024*5;
+
+        try{
+            MultipartRequest multipartRequest=new MultipartRequest(request,savePath,sizeLimit,"UTF-8");
+            memberId=multipartRequest.getParameter("memberId");
+            title=multipartRequest.getParameter("title");
+            content=multipartRequest.getParameter("content");
+            classification=multipartRequest.getParameter("classification");
+            filePath=savePath+multipartRequest.getFilesystemName("attachFile");
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+
+        File file=new File(filePath);
+        try(BufferedInputStream bufferedInputStream=new BufferedInputStream(new FileInputStream(file))){
+            attachFile=bufferedInputStream.readAllBytes();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         list.add(memberId);
         list.add(title);
         list.add(content);
         list.add(classification);
+        Post post=Post.createPost(list,attachFile);
 
-        Post post=Post.createPost(list);
 
         if(post==null){
             request.setAttribute("errorCode",-1);
@@ -33,5 +62,7 @@ public class PostCreateAction implements Action {
             int check=postRepository.add(post);
             request.setAttribute("errorCode",check);
         }
+
+
     }
 }
