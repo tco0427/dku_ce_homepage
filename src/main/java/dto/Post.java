@@ -17,11 +17,12 @@ public class Post {
     private String content;
     private Date creationDate;
     private Classification classification;
-    private byte[] attachFile;
+    private String attachFileName;
+    private String filePath;
 
 
 	public Post(Integer id, String memberID, String title, String content, Date creationDate,
-                Classification classification, byte[] attachFile) {
+                Classification classification, String attachFileName,String filePath) {
 		super();
 		this.id = id;
 		this.memberID = memberID;
@@ -29,25 +30,29 @@ public class Post {
 		this.content = content;
 		this.creationDate = creationDate;
 		this.classification = classification;
-		this.attachFile=attachFile;
+		this.attachFileName=attachFileName;
+		this.filePath=filePath;
 	}
 
 
-	public Post( String memberID, String title, String content, Date creationDate, Classification classification,byte[] attachFile) {
+	public Post( String memberID, String title, String content, Date creationDate, Classification classification,String attachFileName,String filePath) {
         this.memberID = memberID;
         this.title = title;
         this.content = content;
         this.creationDate = creationDate;
         this.classification = classification;
-        this.attachFile=attachFile;
+        this.attachFileName=attachFileName;
+        this.filePath=filePath;
     }
 
-    public static Post createPost(List<String> list,byte[] attachFile){
+    public static Post createPost(List<String> list){
         String memberId=list.get(0);
         String title=list.get(1);
         String content=list.get(2);
         Date creationDate=new Date(System.currentTimeMillis());
         Classification classification=Classification.valueOf(list.get(3));
-        return new Post(memberId,title,content,creationDate,classification,attachFile);
+        String attachFileName=list.get(4);
+        String filePath=list.get(5);
+        return new Post(memberId,title,content,creationDate,classification,attachFileName,filePath);
     }
 }

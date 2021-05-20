@@ -23,14 +23,15 @@ public class PostRepositoryImpl implements PostRepository{
         Connection conn=null;
         try{
             conn=getConnection();
-            String sql="insert into post(memberID,title,content,creationDate,classification,attachFile) values (?,?,?,?,?,?)";
+            String sql="insert into post(memberID,title,content,creationDate,classification,attachFileName,filePath) values (?,?,?,?,?,?,?)";
             pstmt=conn.prepareStatement(sql);
             pstmt.setString(1,post.getMemberID());
             pstmt.setString(2,post.getTitle());
             pstmt.setString(3,post.getContent());
             pstmt.setDate(4,post.getCreationDate());
             pstmt.setString(5,post.getClassification().toString());
-            pstmt.setBytes(6,post.getAttachFile());
+            pstmt.setString(6,post.getAttachFileName());
+            pstmt.setString(7,post.getFilePath());
             return pstmt.executeUpdate();
         } catch(SQLIntegrityConstraintViolationException e){
             //PK에 대한 잘못된 접근으로 예외 발생시에는 -10을 반환하도록하였다.(일종의 에러코드라고 생각하면된다.)
@@ -207,7 +208,8 @@ public class PostRepositoryImpl implements PostRepository{
         Date createDate=null;
         String classificationString;
         Classification classification=null;
-        byte[] attachFile=null;
+        String attachFileName=null;
+        String filePath=null;
         try{
             id=rs.getInt("postPK");
             memberId=rs.getString("memberID");
@@ -216,13 +218,11 @@ public class PostRepositoryImpl implements PostRepository{
             createDate=rs.getDate("creationDate");
             classificationString=rs.getString("classification");
             classification=Classification.valueOf(classificationString);
-            Blob blob=rs.getBlob("attachFile");
-            if(blob!=null){
-                attachFile=blob.getBytes(1,(int)blob.length());
-            }
+            attachFileName=rs.getString("attachFileName");
+            filePath=rs.getString("filePath");
         }catch(SQLException e){
             e.printStackTrace();
         }
-        return new Post(id,memberId,title,content,createDate,classification,attachFile);
+        return new Post(id,memberId,title,content,createDate,classification,attachFileName,filePath);
     }
 }

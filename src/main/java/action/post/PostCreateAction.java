@@ -17,28 +17,32 @@ public class PostCreateAction implements Action {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
 
-        String savePath = request.getSession().getServletContext().getRealPath("/");
+        String savePath = request.getSession().getServletContext().getRealPath("/resource/file/");
         List<String> list=new ArrayList<>();
         String memberId = null;
         String title = null;
         String content = null;
         String classification = null;
-        String filePath=null;
-        byte[] attachFile=null;
         ServletInputStream reader = null;
-        int sizeLimit=1024*1024*1024*5;
+        String attachFileName=null;
+        String filePath=null;
+        //byte[] attachFile=null;
+        //int sizeLimit=1024*1024*1024*5;
 
         try{
-            MultipartRequest multipartRequest=new MultipartRequest(request,savePath,sizeLimit,"UTF-8");
+            MultipartRequest multipartRequest=new MultipartRequest(request,savePath,"UTF-8");
             memberId=multipartRequest.getParameter("memberId");
             title=multipartRequest.getParameter("title");
             content=multipartRequest.getParameter("content");
             classification=multipartRequest.getParameter("classification");
+
+            attachFileName = multipartRequest.getFilesystemName("attachFile");
             filePath=savePath+multipartRequest.getFilesystemName("attachFile");
         }catch(IOException e){
             e.printStackTrace();
         }
 
+        /*
         File file=new File(filePath);
         try(BufferedInputStream bufferedInputStream=new BufferedInputStream(new FileInputStream(file))){
             attachFile=bufferedInputStream.readAllBytes();
@@ -47,12 +51,15 @@ public class PostCreateAction implements Action {
         } catch (IOException e) {
             e.printStackTrace();
         }
+         */
 
         list.add(memberId);
         list.add(title);
         list.add(content);
         list.add(classification);
-        Post post=Post.createPost(list,attachFile);
+        list.add(attachFileName);
+        list.add(filePath);
+        Post post=Post.createPost(list);
 
 
         if(post==null){
