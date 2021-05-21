@@ -9,6 +9,7 @@
     <meta charset="UTF-8">
 </head>
 <body>
+<a href="/form/editProfile.jsp"><i class="fa fa-pencil" aria-hidden="true" style="color:lightgrey;float:right;"></i></a>
 <c:set var="name" value="${sessionScope.name}"/>
 <div class="box">
     <i class="fa fa-user fa-5x" aria-hidden="true"></i>
