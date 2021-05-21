@@ -69,6 +69,10 @@
     				<i class="fa fa-user fa-2x" aria-hidden="true"></i>
 				</div>
 				<div class="user">${nickName}</div>
+				<div class="modify-comment" style="float:right;">
+					<a href="/view/home.jsp"><i class="fa fa-pencil" aria-hidden="true" style="color:lightgrey;margin-right:5px;"></i></a>
+					<a href="/view/home.jsp"><i class="fa fa-times" aria-hidden="true" style="color:lightgrey;"></i></a>
+				</div>
 				<div class="date">${post.creationDate}</div>
 				<hr>
 				<div class="content">
@@ -84,6 +88,7 @@
 				<div class="comment-icon">
 					<i class="fa fa-comment-o" aria-hidden="true"></i> 댓글 ${requestScope.commentList.size()}개
 				</div>
+				
 				<hr>
 
 				<div class="comment-title">댓글</div>
@@ -94,8 +99,13 @@
 						<i class="fa fa-user fa-2x" aria-hidden="true"></i>
 					</div>
 					<div class="user-comment">${nickName}</div>
+					<div class="modify-comment" style="float:right;">
+						<a href="/view/home.jsp"><i class="fa fa-pencil" aria-hidden="true" style="color:lightgrey;margin-right:5px;"></i></a>
+						<a href="/view/home.jsp"><i class="fa fa-times" aria-hidden="true" style="color:lightgrey;"></i></a>
+					</div>
 					<div class="comment">${comment.content}</div>
 					<div class="date-comment">${comment.date}</div>
+					
 					<hr style="border: 1px dashed lightgrey;">
 				</c:forEach>
 				<c:choose>

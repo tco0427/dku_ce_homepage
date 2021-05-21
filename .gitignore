@@ -6,6 +6,8 @@
 bin/
 target/
 .DS_Store
+src/.DS_Store
+src/main/.DS_Store
 # Created by https://www.gitignore.io/api/java,macos,gradle,intellij
 # Edit at https://www.gitignore.io/?templates=java,macos,gradle,intellij
 
