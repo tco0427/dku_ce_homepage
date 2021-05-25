@@ -35,7 +35,6 @@ public class PostCreateAction implements Action {
             title=multipartRequest.getParameter("title");
             content=multipartRequest.getParameter("content");
             classification=multipartRequest.getParameter("classification");
-
             attachFileName = multipartRequest.getFilesystemName("attachFile");
             filePath=savePath+multipartRequest.getFilesystemName("attachFile");
         }catch(IOException e){
