@@ -34,7 +34,5 @@ public class PostFindAction implements Action {
         request.setAttribute("post",post);
         request.setAttribute("commentList",commentList);
         request.setAttribute("postId",id);
-
-        System.out.println(changePermission);
     }
 }
