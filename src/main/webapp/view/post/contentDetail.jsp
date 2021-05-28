@@ -26,7 +26,6 @@
 </head>
 
 <body>
-	<c:set var="sessionMemberId" value="${sessionScope.id}"/>
 	<c:set var="loginFlag" value="${sessionScope.login}" />
 	<c:set var="loginFail" value="${requestScope.loginFail}" />
 	<c:set var="postList" value="${requestScope.post}"/>
@@ -67,10 +66,13 @@
     				<i class="fa fa-user fa-2x" aria-hidden="true"></i>
 				</div>
 				<div class="user">${nickName}</div>
-				<div class="modify-comment" style="float:right;">
-					<a href="/view/home.jsp"><i class="fa fa-pencil" aria-hidden="true" style="color:lightgrey;margin-right:5px;"></i></a>
-					<a href="/view/home.jsp"><i class="fa fa-times" aria-hidden="true" style="color:lightgrey;"></i></a>
-				</div>
+				<c:set var="changePermission" value="${requestScope.changePermission}"/>
+				<c:if test="${changePermission eq true}">
+					<div class="modify-comment" style="float:right;">
+						<a href="/view/home.jsp"><i class="fa fa-pencil" aria-hidden="true" style="color:lightgrey;margin-right:5px;"></i></a>
+						<a href="/view/home.jsp"><i class="fa fa-times" aria-hidden="true" style="color:lightgrey;"></i></a>
+					</div>
+				</c:if>
 				<div class="date">${post.creationDate}</div>
 				<hr>
 				<div class="content">
@@ -97,18 +99,14 @@
 						<i class="fa fa-user fa-2x" aria-hidden="true"></i>
 					</div>
 					<div class="user-comment">${nickName}</div>
+					<c:set var="commentMemberId" value="${comment.memberId}"/>
+					<c:if test="${commentMemberId.equals(sessionScope.id)}">
+						<div class="modify-comment" style="float:right;">
+							<a href="/view/home.jsp"><i class="fa fa-pencil" aria-hidden="true" style="color:lightgrey;margin-right:5px;"></i></a>
+							<a href="/view/home.jsp"><i class="fa fa-times" aria-hidden="true" style="color:lightgrey;"></i></a>
+						</div>
+					</c:if>
 
-					<c:choose>
-						<c:when test="${post.memberID.equals(sessionMemberId)}">
-							<div class="modify-comment" style="float:right;">
-								<a href="/view/home.jsp"><i class="fa fa-pencil" aria-hidden="true" style="color:lightgrey;margin-right:5px;"></i></a>
-								<a href="/view/home.jsp"><i class="fa fa-times" aria-hidden="true" style="color:lightgrey;"></i></a>
-							</div>
-						</c:when>
-						<c:when test="${loginFail eq true}">
-
-						</c:when>
-					</c:choose>
 
 					<div class="comment">${comment.content}</div>
 					<div class="date-comment">${comment.date}</div>
