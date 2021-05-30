@@ -21,11 +21,9 @@ public class Member {
     private String nickname;
     private String passwordHint;
     private Integer studentID;
+    private Permission permission;
 
-    public Member(){
-        this(null,null,null,null,null,null,null);
-    }
-    public Member(String id, String password, String email, String name, String nickname, String passwordHint, Integer studentID) {
+    public Member(String id, String password, String email, String name, String nickname, String passwordHint, Integer studentID,Permission permission) {
         this.id = id;
         this.password = password;
         this.email = email;
@@ -33,6 +31,7 @@ public class Member {
         this.nickname = nickname;
         this.passwordHint = passwordHint;
         this.studentID = studentID;
+        this.permission = Permission.Normal;
     }
 	public static Member createMember(List<String> list){
         String id=list.get(0);
@@ -52,7 +51,7 @@ public class Member {
             nickname=name;
         }
 
-        return new Member(id,password,email,name,nickname,passwordHint,studentID);
+        return new Member(id,password,email,name,nickname,passwordHint,studentID,Permission.Normal);
     }
 
     public static String getNickName(String id){
@@ -60,6 +59,15 @@ public class Member {
         Member member = memberRepository.findOne(id);
         if(member!=null){
             return member.getNickname();
+        }else{
+            return null;
+        }
+    }
+    public static String getPermission(String id){
+        MemberRepository memberRepository=MemberRepositoryImpl.getInstance();
+        Member member=memberRepository.findOne(id);
+        if(member!=null){
+            return member.getPermission().toString();
         }else{
             return null;
         }

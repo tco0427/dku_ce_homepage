@@ -8,3 +8,5 @@ CREATE TABLE ceHomepage.`member`(
     studentID int not NULL,
     CONSTRAINT PK PRIMARY KEY (id)
 );
+
+alter table ceHomepage.`member` add permission varchar(7) not null;
