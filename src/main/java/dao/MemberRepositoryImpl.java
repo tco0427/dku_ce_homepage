@@ -1,6 +1,7 @@
 package dao;
 
 import dto.Member;
+import dto.Permission;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class MemberRepositoryImpl implements MemberRepository{
         Connection conn=null;
         try{
             conn=getConnection();
-            String sql="insert into member values (?,?,?,?,?,?,?)";
+            String sql="insert into member values (?,?,?,?,?,?,?,?)";
             pstmt=conn.prepareStatement(sql);
             pstmt.setString(1,member.getId());
             pstmt.setString(2,member.getPassword());
@@ -32,6 +33,7 @@ public class MemberRepositoryImpl implements MemberRepository{
             pstmt.setString(5,member.getNickname());
             pstmt.setString(6,member.getPassword());
             pstmt.setInt(7,member.getStudentID());
+            pstmt.setString(8,member.getPermission().toString());
             return pstmt.executeUpdate();
         } catch(SQLIntegrityConstraintViolationException e){
             //PK에 대한 잘못된 접근으로 예외 발생시에는 -10을 반환하도록하였다.(일종의 에러코드라고 생각하면된다.)
@@ -223,7 +225,7 @@ public class MemberRepositoryImpl implements MemberRepository{
         }catch(SQLException e){
             e.printStackTrace();
         }
-        return new Member(id,password,email,name,nickname,passwordHint,studentID);
+        return new Member(id,password,email,name,nickname,passwordHint,studentID, Permission.Normal);
     }
 
 }

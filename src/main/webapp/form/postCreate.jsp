@@ -1,6 +1,7 @@
 <%@ page import="dto.Classification"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="dto.Member"%>
 <html>
 <head>
 <link rel="stylesheet"
@@ -64,8 +65,19 @@
 				<div class="mb-2">
 					<select name="classification" class="select"
 						aria-label="Default select example">
+						<c:set var="loginFlag" value="${sessionScope.login}" />
+						<c:set var="permission" value="${Member.getPermission(sessionScope.id)}"/>
 						<c:forEach var="classification" items="<%=Classification.values()%>">
-							<option value="${classification.name()}">${classification.name()}</option>
+							<c:choose>
+								<c:when test="${classification.name() ne 'Notice'}">
+									<option value="${classification.name()}">${classification.name()}</option>
+								</c:when>
+								<c:when test="${classification.name() eq 'Notice'}">
+									<c:if test="${permission eq 'Manager'}">
+										<option value="${classification.name()}">${classification.name()}</option>
+									</c:if>
+								</c:when>
+							</c:choose>
 						</c:forEach>
 					</select>
 				</div>
