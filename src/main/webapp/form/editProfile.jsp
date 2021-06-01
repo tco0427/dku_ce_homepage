@@ -4,12 +4,13 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/resource/css/signUp.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
-    <title>회원 정보 수</title>
+    <title>회원 정보 수정</title>
 </head>
 <body>
 
@@ -20,7 +21,16 @@
 <c:set var="name" value="${sessionScope.email}"/>
 <c:set var="name" value="${sessionScope.nickName}"/>
 <!-- 한 번 해봤는데 id밖에 안불러와지넹 ㅎㅎ -->
+
 <form action="/Member/MemberJoin" method="post" accept-charset="UTF-8" style="margin:40px;">
+    <div class="image-section">
+		<div class="img-area">
+			<img class="profileImg" style="width:150px; height: 150px; border-radius: 75px; border: solid 1px; text-align: center; object-fit: cover;" src="/resource/img/bear.png" alt=""/>
+			<label for="imgFile">업로드</label>
+			<input type="file" id="imgFile" name="imgFile" accept=".jpg, .png, .jpeg, .gif" value=""/>		
+		</div>
+	</div>
+	
     <div class="mb-3">
         <label class="form-label">아이디</label>
         <input name="id" type="text" maxlength="12" class="form-control" value="${id}" required>
