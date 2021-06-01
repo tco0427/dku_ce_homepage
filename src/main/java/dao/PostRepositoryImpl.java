@@ -158,7 +158,7 @@ public class PostRepositoryImpl implements PostRepository{
         ResultSet rs=null;
         try{
             conn=getConnection();
-            String sql="select * from post where classification=? order by creationDate desc";
+            String sql="select * from post where classification=? order by postPK desc";
             pstmt=conn.prepareStatement(sql);
             pstmt.setString(1,classification.toString());
             rs=pstmt.executeQuery();
