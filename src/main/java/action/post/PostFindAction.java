@@ -29,6 +29,8 @@ public class PostFindAction implements Action {
         CommentRepository commentRepository= CommentRepositoryImpl.getInstance();
         List<Comment> commentList = commentRepository.findByPost(id);
 
+        boolean changePermission = request.getSession().getAttribute("id").equals(post.getMemberID());
+        request.setAttribute("changePermission",changePermission);
         request.setAttribute("post",post);
         request.setAttribute("commentList",commentList);
         request.setAttribute("postId",id);
