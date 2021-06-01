@@ -83,7 +83,7 @@
 				<div class="like">
 					<c:choose>
 						<c:when test="${post.attachFileName ne null}">
-							<a href="" download="${post.filePath}">다운로드</a>
+							<a href="/Post/Download?fileName=${post.attachFileName}">다운로드</a>
 						</c:when>
 					</c:choose>
 				</div>
@@ -117,7 +117,6 @@
 				</c:forEach>
 				<c:choose>
 					<c:when test="${loginFlag eq null}">
-
 					</c:when>
 					<c:when test="${loginFlag eq 'success'}">
 						<form action="/Comment/Create" method="post" accept-charset="UTF-8">
