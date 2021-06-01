@@ -70,7 +70,7 @@
 				</div>
 				<div class="user">${nickName}</div>
 				<div class="modify-comment" style="float:right;">
-					<a href="/view/home.jsp"><i class="fa fa-pencil" aria-hidden="true" style="color:lightgrey;margin-right:5px;"></i></a>
+					<a href="/form/editPost.jsp"><i class="fa fa-pencil" aria-hidden="true" style="color:lightgrey;margin-right:5px;"></i></a>
 					<a href="/view/home.jsp"><i class="fa fa-times" aria-hidden="true" style="color:lightgrey;"></i></a>
 				</div>
 				<div class="date">${post.creationDate}</div>
