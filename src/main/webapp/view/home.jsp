@@ -14,6 +14,10 @@
 <c:set var="loginFlag" value="${sessionScope.login}"/>
 <c:set var="loginFail" value="${requestScope.loginFail}"/>
 <c:set var="registerErrorCode" value="${requestScope.registerErrorCode}"/>
+<c:set var="updateErrorCode" value="${requestScope.updateErrorCode}"/>
+<c:if test="${updateErrorCode eq '-1'}">
+    out.println("<script>alert('회원정보 수정에 실패하였습니다.'); history.go(-1);</script>");
+</c:if>
 
 <c:choose>
     <c:when test="${registerErrorCode eq -1}">

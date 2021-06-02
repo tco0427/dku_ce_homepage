@@ -63,6 +63,11 @@ public class Member {
             return null;
         }
     }
+    public static Member getMember(String id){
+        MemberRepository memberRepository=MemberRepositoryImpl.getInstance();
+        Member member=memberRepository.findOne(id);
+        return member;
+    }
     public static String getPermission(String id){
         MemberRepository memberRepository=MemberRepositoryImpl.getInstance();
         Member member=memberRepository.findOne(id);

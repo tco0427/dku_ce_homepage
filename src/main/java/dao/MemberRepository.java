@@ -13,4 +13,5 @@ public interface MemberRepository {
     public Member findOne(String id);
     public List<Member> findAll();
     public List<Member> findByHint(String passwordHint);
+    public int updateMember(Member member);
 }

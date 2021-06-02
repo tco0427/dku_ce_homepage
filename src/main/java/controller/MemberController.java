@@ -3,6 +3,7 @@ package controller;
 import action.Action;
 import action.member.MemberJoinAction;
 import action.member.MemberLoginAction;
+import action.member.MemberUpdateAction;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -38,6 +39,11 @@ public class MemberController extends HttpServlet {
             requestDispatcher.forward(request,response);
         }else if(command.equals("/Member/MemberJoin")){
             action=new MemberJoinAction();
+            action.execute(request,response);
+            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/CEHome/Main");
+            requestDispatcher.forward(request,response);
+        }else if(command.equals("/Member/MemberUpdate")){
+            action=new MemberUpdateAction();
             action.execute(request,response);
             RequestDispatcher requestDispatcher=request.getRequestDispatcher("/CEHome/Main");
             requestDispatcher.forward(request,response);
