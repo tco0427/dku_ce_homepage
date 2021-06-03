@@ -32,7 +32,6 @@
 <body>
 	<c:set var="loginFlag" value="${sessionScope.login}" />
 	<c:set var="loginFail" value="${requestScope.loginFail}" />
-	<c:set var="postList" value="${requestScope.post}"/>
 
 	<c:choose>
 		<c:when test="${loginFail eq true}">
@@ -63,20 +62,24 @@
 			<div class="main" style="height: auto;">
 				<c:set var="post" value="${requestScope.post}"/>
 				<c:set var="nickName" value="${Member.getNickName(post.memberID)}"/>
-				<form>
-					<div class="postCategory"> | 카테고리</div>
-					<div class="postName">게시글제목</div>
+				<form action="/Post/PostUpdate" method="post" accept-charset="UTF-8" >
+
+					<div class="postCategory"> | ${post.classification}</div>
+					<div class="postName">${post.title}</div>
 					<div class="userProfile">
 	    				<i class="fa fa-user fa-2x" aria-hidden="true"></i>
 					</div>
-					
-					<div class="user">닉네임</div>
-					<div class="date">2021.05.31</div>
+					<div>
+						<input name="postId" type="text" value="${post.id}"
+							   style="display: none; visibility: hidden;">
+					</div>
+					<div class="user">${nickName}</div>
+					<div class="date">${post.creationDate}</div>
 					
 					<hr>
 				
 					<div class="content">
-					<textarea name="content" cols="40" rows="100" class="content" placeholder="기존내용불러오기" required></textarea>
+					<textarea name="content" cols="40" rows="100" class="content" value="${post.content}" required></textarea>
 					</div>
 					<div class="btn-area">
 					<button type="submit" class="modifyBtn">수정완료</button>

@@ -70,8 +70,8 @@
 				<c:set var="changePermission" value="${requestScope.changePermission}"/>
 				<c:if test="${changePermission eq true}">
 					<div class="modify-comment" style="float:right;">
-						<a href="/form/editPost.jsp"><i class="fa fa-pencil" aria-hidden="true" style="color:lightgrey;margin-right:5px;"></i></a>
-						<a href="/view/home.jsp"><i class="fa fa-times" aria-hidden="true" style="color:lightgrey;"></i></a>
+						<a href="/form/editPost.jsp?post=${post}"><i class="fa fa-pencil" aria-hidden="true" style="color:lightgrey;margin-right:5px;"></i></a>
+						<a href="/Post/PostDelete?id=${post.id}"><i class="fa fa-times" aria-hidden="true" style="color:lightgrey;"></i></a>
 					</div>
 				</c:if>
         

@@ -15,6 +15,10 @@
 <c:set var="loginFail" value="${requestScope.loginFail}"/>
 <c:set var="registerErrorCode" value="${requestScope.registerErrorCode}"/>
 <c:set var="updateErrorCode" value="${requestScope.updateErrorCode}"/>
+<c:set var="deleteErrorCode" value="${requestScope.deleteErrorCode}"/>
+<c:if test="${deleteErrorCode eq '-1'}">
+    out.println("<script>alert('게시글 삭제에 실패하였습니다.'); history.go(-1);</script>");
+</c:if>
 <c:if test="${updateErrorCode eq '-1'}">
     out.println("<script>alert('회원정보 수정에 실패하였습니다.'); history.go(-1);</script>");
 </c:if>

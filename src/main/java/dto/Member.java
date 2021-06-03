@@ -31,7 +31,7 @@ public class Member {
         this.nickname = nickname;
         this.passwordHint = passwordHint;
         this.studentID = studentID;
-        this.permission = Permission.Normal;
+        this.permission = permission;
     }
 	public static Member createMember(List<String> list){
         String id=list.get(0);

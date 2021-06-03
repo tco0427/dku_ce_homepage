@@ -16,7 +16,7 @@ public class PostDeleteAction implements Action {
         }catch(NumberFormatException e){
             id=null;
         }
-
+        System.out.println("id: "+id);
         PostRepository postRepository= PostRepositoryImpl.getInstance();
         int code=postRepository.delete(id);
         request.setAttribute("errorCode",code);

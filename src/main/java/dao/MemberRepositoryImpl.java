@@ -235,6 +235,7 @@ public class MemberRepositoryImpl implements MemberRepository{
         String name=null;
         String nickname=null;
         String passwordHint=null;
+        String permission=null;
         Integer studentID=null;
         try{
             id=rs.getString("id");
@@ -243,11 +244,12 @@ public class MemberRepositoryImpl implements MemberRepository{
             name=rs.getString("name");
             nickname=rs.getString("nickname");
             passwordHint=rs.getString("passwordHint");
+            permission=rs.getString("permission");
             studentID=rs.getInt("studentID");
         }catch(SQLException e){
             e.printStackTrace();
         }
-        return new Member(id,password,email,name,nickname,passwordHint,studentID, Permission.Normal);
+        return new Member(id,password,email,name,nickname,passwordHint,studentID, Permission.valueOf(permission));
     }
 
 }

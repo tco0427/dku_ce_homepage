@@ -46,7 +46,7 @@ public class PostController extends HttpServlet {
         }else if(command.equals("/Post/PostUpdate")){
             action=new PostUpdateAction();
             action.execute(request,response);
-            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/post.jsp");
+            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/CEHome/Main");
             requestDispatcher.forward(request,response);
         }else if(command.equals("/Post/PostDetail")){
             action=new PostFindAction();
