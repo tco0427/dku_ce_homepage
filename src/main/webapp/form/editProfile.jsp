@@ -16,13 +16,9 @@
 
 <div class="sign">
 <jsp:include page="/fragments/header.jsp" />
-<c:set var="name" value="${sessionScope.id}"/>
-<c:set var="name" value="${sessionScope.password}"/>
-<c:set var="name" value="${sessionScope.email}"/>
-<c:set var="name" value="${sessionScope.nickName}"/>
-<!-- 한 번 해봤는데 id밖에 안불러와지넹 ㅎㅎ -->
+<c:set var="memberId" value="${sessionScope.id}"/>
 
-<form action="/Member/MemberJoin" method="post" accept-charset="UTF-8" style="margin:40px;">
+<form action="/Member/MemberUpdate" method="post" accept-charset="UTF-8" style="margin:40px;">
     <div class="image-section">
 		<div class="img-area">
 			<img class="profileImg" style="width:150px; height: 150px; border-radius: 75px; border: solid 1px; text-align: center; object-fit: cover;" src="/resource/img/bear.png" alt=""/>
@@ -30,28 +26,28 @@
 			<input type="file" id="imgFile" name="imgFile" accept=".jpg, .png, .jpeg, .gif" value=""/>		
 		</div>
 	</div>
-	
-    <div class="mb-3">
-        <label class="form-label">아이디</label>
-        <input name="id" type="text" maxlength="12" class="form-control" value="${id}" required>
+
+    <div>
+        <input name="memberId" type="text" value="${memberId}"
+               style="display: none; visibility: hidden;">
     </div>
     <div class="mb-3">
         <label class="form-label">비밀번호</label>
-        <input name="password" type="password" maxlength="15" class="form-control" value="${password}" required>
+        <input name="password" type="password" maxlength="15" class="form-control" value="" required>
     </div>
     <div class="mb-3">
         <label class="form-label">비밀번호 확인</label>
         <input name="passwordCheck" type="password" class="form-control" required>
         <div id="passwordCheck" class="form-text">비밀 번호는 필수 항목 입니다.</div>
     </div>
-    
+    <c:set var="member" value="${Member.getMember(id)}"/>
     <div class="mb-3">
         <label class="form-label">이메일</label>
-        <input name="email" type="text" maxlength="30" class="form-control" value="${email}" required>
+        <input name="email" type="text" maxlength="30" class="form-control" value="${member.email}" required>
     </div>
     <div class="mb-3">
         <label class="form-label">닉네임</label>
-        <input name="nickname" type="text" maxlength="10" class="form-control" value="${nickName}">
+        <input name="nickname" type="text" maxlength="10" class="form-control" value="${member.nickname}">
     </div>
 
     <button type="submit" class="button">수정완료</button>

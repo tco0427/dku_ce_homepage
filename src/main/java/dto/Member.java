@@ -31,7 +31,7 @@ public class Member {
         this.nickname = nickname;
         this.passwordHint = passwordHint;
         this.studentID = studentID;
-        this.permission = Permission.Normal;
+        this.permission = permission;
     }
 	public static Member createMember(List<String> list){
         String id=list.get(0);
@@ -62,6 +62,11 @@ public class Member {
         }else{
             return null;
         }
+    }
+    public static Member getMember(String id){
+        MemberRepository memberRepository=MemberRepositoryImpl.getInstance();
+        Member member=memberRepository.findOne(id);
+        return member;
     }
     public static String getPermission(String id){
         MemberRepository memberRepository=MemberRepositoryImpl.getInstance();

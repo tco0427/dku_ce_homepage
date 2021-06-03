@@ -67,15 +67,13 @@
 						aria-label="Default select example">
 						<c:set var="loginFlag" value="${sessionScope.login}" />
 						<c:set var="permission" value="${Member.getPermission(sessionScope.id)}"/>
+						<c:if test="${permission eq 'Manager'}">
+							<option value="${Classification.Notice}">${Classification.Notice}</option>
+						</c:if>
 						<c:forEach var="classification" items="<%=Classification.values()%>">
 							<c:choose>
 								<c:when test="${classification.name() ne 'Notice'}">
 									<option value="${classification.name()}">${classification.name()}</option>
-								</c:when>
-								<c:when test="${classification.name() eq 'Notice'}">
-									<c:if test="${permission eq 'Manager'}">
-										<option value="${classification.name()}">${classification.name()}</option>
-									</c:if>
 								</c:when>
 							</c:choose>
 						</c:forEach>

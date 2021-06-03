@@ -66,14 +66,15 @@
     				<i class="fa fa-user fa-2x" aria-hidden="true"></i>
 				</div>
 				<div class="user">${nickName}</div>
-
+        
 				<c:set var="changePermission" value="${requestScope.changePermission}"/>
 				<c:if test="${changePermission eq true}">
 					<div class="modify-comment" style="float:right;">
-						<a href="/form/editPost.jsp"><i class="fa fa-pencil" aria-hidden="true" style="color:lightgrey;margin-right:5px;"></i></a>
-						<a href="/view/home.jsp"><i class="fa fa-times" aria-hidden="true" style="color:lightgrey;"></i></a>
+						<a href="/form/editPost.jsp?post=${post}"><i class="fa fa-pencil" aria-hidden="true" style="color:lightgrey;margin-right:5px;"></i></a>
+						<a href="/Post/PostDelete?id=${post.id}"><i class="fa fa-times" aria-hidden="true" style="color:lightgrey;"></i></a>
 					</div>
 				</c:if>
+        
 				<div class="date">${post.creationDate}</div>
 				<hr>
 				<div class="content">
@@ -82,7 +83,7 @@
 				<div class="like">
 					<c:choose>
 						<c:when test="${post.attachFileName ne null}">
-							<a href="" download="${post.filePath}">다운로드</a>
+							<a href="/Post/Download?fileName=${post.attachFileName}">다운로드</a>
 						</c:when>
 					</c:choose>
 				</div>
@@ -116,7 +117,6 @@
 				</c:forEach>
 				<c:choose>
 					<c:when test="${loginFlag eq null}">
-
 					</c:when>
 					<c:when test="${loginFlag eq 'success'}">
 						<form action="/Comment/Create" method="post" accept-charset="UTF-8">

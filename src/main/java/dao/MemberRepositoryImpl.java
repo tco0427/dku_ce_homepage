@@ -46,7 +46,29 @@ public class MemberRepositoryImpl implements MemberRepository{
         }
         return -1;
     }
+    @Override
+    public int updateMember(Member member){
+        Connection conn=null;
+        PreparedStatement pstmt=null;
+        try{
+            conn=getConnection();
+            //SQL문을 미리 준비하고 이를 String으로 저장
+            String sql="update member set password=?, email=?, nickname=? where id=?";
 
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setString(1,member.getPassword());
+            pstmt.setString(2,member.getEmail());
+            pstmt.setString(3,member.getNickname());
+            pstmt.setString(4,member.getId());
+            return pstmt.executeUpdate();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally{
+            //리소스 반환하는 메소드 호출
+            resourceClose(conn,pstmt);
+        }
+        return -1;
+    }
     @Override
     public int delete(String id) {
         Connection conn=null;
@@ -213,6 +235,7 @@ public class MemberRepositoryImpl implements MemberRepository{
         String name=null;
         String nickname=null;
         String passwordHint=null;
+        String permission=null;
         Integer studentID=null;
         try{
             id=rs.getString("id");
@@ -221,11 +244,12 @@ public class MemberRepositoryImpl implements MemberRepository{
             name=rs.getString("name");
             nickname=rs.getString("nickname");
             passwordHint=rs.getString("passwordHint");
+            permission=rs.getString("permission");
             studentID=rs.getInt("studentID");
         }catch(SQLException e){
             e.printStackTrace();
         }
-        return new Member(id,password,email,name,nickname,passwordHint,studentID, Permission.Normal);
+        return new Member(id,password,email,name,nickname,passwordHint,studentID, Permission.valueOf(permission));
     }
 
 }

@@ -17,7 +17,7 @@ public class PostCreateAction implements Action {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
 
-        String savePath = request.getSession().getServletContext().getRealPath("/resource/file/");
+        String savePath = request.getSession().getServletContext().getRealPath("/");
         List<String> list=new ArrayList<>();
         String memberId = null;
         String title = null;

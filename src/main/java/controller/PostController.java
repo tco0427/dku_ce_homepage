@@ -1,7 +1,9 @@
 package controller;
 
 import action.Action;
+import action.FileDownloadAction;
 import action.post.*;
+import dto.Post;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -44,13 +46,21 @@ public class PostController extends HttpServlet {
         }else if(command.equals("/Post/PostUpdate")){
             action=new PostUpdateAction();
             action.execute(request,response);
-            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/post.jsp");
+            RequestDispatcher requestDispatcher=request.getRequestDispatcher("/CEHome/Main");
             requestDispatcher.forward(request,response);
         }else if(command.equals("/Post/PostDetail")){
             action=new PostFindAction();
             action.execute(request,response);
             RequestDispatcher requestDispatcher=request.getRequestDispatcher("/view/post/contentDetail.jsp");
             requestDispatcher.forward(request,response);
+        }else if(command.equals("/Post/Download")){
+            action=new FileDownloadAction();
+            String query=request.getQueryString();
+
+            String[] strings = query.split("=");
+
+            request.setAttribute(strings[0],strings[1]);
+            action.execute(request,response);
         }
     }
 }
