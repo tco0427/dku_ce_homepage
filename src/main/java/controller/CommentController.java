@@ -2,6 +2,7 @@ package controller;
 
 import action.Action;
 import action.comment.CommentCreateAction;
+import action.comment.CommentDeleteAction;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,6 +32,12 @@ public class CommentController extends HttpServlet {
         Action action=null;
         if(command.equals("/Comment/Create")){
             action=new CommentCreateAction();
+            action.execute(request,response);
+            String url = "/Post/PostDetail".concat("?id="+request.getParameter("postId"));
+            RequestDispatcher requestDispatcher=request.getRequestDispatcher(url);
+            requestDispatcher.forward(request,response);
+        }else if(command.equals("/Comment/Delete")){
+            action=new CommentDeleteAction();
             action.execute(request,response);
             String url = "/Post/PostDetail".concat("?id="+request.getParameter("postId"));
             RequestDispatcher requestDispatcher=request.getRequestDispatcher(url);
