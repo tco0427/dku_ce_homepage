@@ -23,11 +23,8 @@ public class PostCreateAction implements Action {
         String title = null;
         String content = null;
         String classification = null;
-        ServletInputStream reader = null;
         String attachFileName=null;
         String filePath=null;
-        //byte[] attachFile=null;
-        //int sizeLimit=1024*1024*1024*5;
 
         try{
             MultipartRequest multipartRequest=new MultipartRequest(request,savePath,"UTF-8");
