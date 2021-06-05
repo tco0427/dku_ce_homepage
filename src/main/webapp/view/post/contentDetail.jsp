@@ -26,6 +26,7 @@
 </head>
 
 <body>
+	<c:set var="errorCode" value="${requestScope.errorCode}"/>
 	<c:set var="loginFlag" value="${sessionScope.login}" />
 	<c:set var="loginFail" value="${requestScope.loginFail}" />
 	<c:set var="postList" value="${requestScope.post}"/>
@@ -34,6 +35,9 @@
 		<c:when test="${loginFail eq true}">
         	out.println("<script>alert('로그인에 실패하였습니다.'); window.location='/index.jsp';</script>");
     	</c:when>
+		<c:when test="${errorCode eq -1}">
+			out.println("<script>alert('댓글 삭제에 실패하였습니다.');</script>
+		</c:when>
 	</c:choose>
 
 	<div class="all">
@@ -104,8 +108,7 @@
 					<c:set var="commentMemberId" value="${comment.memberId}"/>
 					<c:if test="${commentMemberId.equals(sessionScope.id)}">
 						<div class="modify-comment" style="float:right;">
-							<a href="/view/home.jsp"><i class="fa fa-pencil" aria-hidden="true" style="color:lightgrey;margin-right:5px;"></i></a>
-							<a href="/view/home.jsp"><i class="fa fa-times" aria-hidden="true" style="color:lightgrey;"></i></a>
+							<a href="/Comment/Delete?id=${comment.id}&postId=${comment.postId}" style="position: absolute; z-index: 10000"> <i class="fa fa-times" aria-hidden="true" style="color:lightgrey;"></i></a>
 						</div>
 					</c:if>
 
