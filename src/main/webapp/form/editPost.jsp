@@ -59,7 +59,7 @@
 			<jsp:include page="/fragments/menu.jsp" />
 		</div>
 		<div>
-			<%-- <div class="main" style="height: auto;">
+			<div class="main" style="height: auto;">
 				<c:set var="post" value="${requestScope.post}"/>
 				<c:set var="nickName" value="${Member.getNickName(post.memberID)}"/>
 				<form action="/Post/PostUpdate" method="post" accept-charset="UTF-8" >
@@ -74,8 +74,8 @@
 							   style="display: none; visibility: hidden;">
 					</div>
 					<div class="user">${nickName}</div>
-					<div class="date">${post.creationDate}</div> --%>
-			<div class="main" style="height: auto;">
+					<div class="date">${post.creationDate}</div>
+			<%-- <div class="main" style="height: auto;">
 				<c:set var="post" value="${requestScope.post}"/>
 				<c:set var="nickName" value="${Member.getNickName(post.memberID)}"/>
 				<form action="/Post/PostUpdate" method="post" accept-charset="UTF-8" >
@@ -90,7 +90,7 @@
 							   style="display: none; visibility: hidden;">
 					</div>
 					<div class="user">닉네임</div>
-					<div class="date">2021.05.06</div>
+					<div class="date">2021.05.06</div> --%>
 					
 					<hr>
 				
