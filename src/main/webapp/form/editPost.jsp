@@ -59,7 +59,7 @@
 			<jsp:include page="/fragments/menu.jsp" />
 		</div>
 		<div>
-			<div class="main" style="height: auto;">
+			<%-- <div class="main" style="height: auto;">
 				<c:set var="post" value="${requestScope.post}"/>
 				<c:set var="nickName" value="${Member.getNickName(post.memberID)}"/>
 				<form action="/Post/PostUpdate" method="post" accept-charset="UTF-8" >
@@ -74,24 +74,51 @@
 							   style="display: none; visibility: hidden;">
 					</div>
 					<div class="user">${nickName}</div>
-					<div class="date">${post.creationDate}</div>
+					<div class="date">${post.creationDate}</div> --%>
+			<div class="main" style="height: auto;">
+				<c:set var="post" value="${requestScope.post}"/>
+				<c:set var="nickName" value="${Member.getNickName(post.memberID)}"/>
+				<form action="/Post/PostUpdate" method="post" accept-charset="UTF-8" >
+
+					<div class="postCategory"> | 공지사항</div>
+					<div class="postName">게시글제목</div>
+					<div class="userProfile">
+	    				<i class="fa fa-user fa-2x" aria-hidden="true"></i>
+					</div>
+					<div>
+						<input name="postId" type="text" value="${post.id}"
+							   style="display: none; visibility: hidden;">
+					</div>
+					<div class="user">닉네임</div>
+					<div class="date">2021.05.06</div>
 					
 					<hr>
 				
-					<div class="content">
+					<%-- <div class="content">
 					<textarea name="content" cols="40" rows="100" class="content" value="${post.content}" required></textarea>
+					</div> --%>
+					
+					<div class="content">
+						<textarea name="content" cols="40" rows="100" class="content" value="${post.content}" required></textarea>
+						<div class="submit">
+							<i class="fa fa-picture-o" style="margin-left: 10px; margin-top: 10px;" aria-hidden="true"></i>
+							<input type="file">
+							<label for="fileUpload">
+								<i class="fa fa-folder-o" aria-hidden="true"></i>
+							</label>
+							<input id="fileUpload" type="file" name="attachFile">
+							<button type="submit" class="modifyBtn">수정</button>
+						</div>
 					</div>
-					<div class="btn-area">
-					<button type="submit" class="modifyBtn">수정완료</button>
-					</div>
+					
 				</form>
-				<div class="like">
+				<%-- <div class="like">
 					<c:choose>
 						<c:when test="${post.attachFile ne null}">
 							<a href="" download="${post.attachFile}">다운로드</a>
 						</c:when>
 					</c:choose>
-				</div>
+				</div> --%>
 				
 		</div>
 	</div>

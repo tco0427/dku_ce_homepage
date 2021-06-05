@@ -1,15 +1,25 @@
+.img-area{
+	display: block;
+  	margin-left: auto;
+ 	margin-right: auto;
+	width:200px;
+	height:200px;
+}
 .img-area label {
-  display: inline-block;
-  padding: .5em .75em;
-  color: #999;
-  font-size: inherit;
-  line-height: normal;
-  vertical-align: middle;
-  background-color: #fdfdfd;
-  cursor: pointer;
-  border: 1px solid #ebebeb;
-  border-bottom-color: #e2e2e2;
-  border-radius: .25em;
+	display: inline-block;
+  	padding: 11px;
+	  color: #969696;	
+	  font-size: inherit;
+	  line-height: normal;
+	  /* vertical-align: middle; */
+	  background-color: #fdfdfd;
+	  cursor: pointer;
+	  border: 1px solid #ebebeb;
+	  width:40px;
+	  height:40px;
+	  border-radius: 20px;
+	  margin-left:130px;
+	  margin-top:-40px;
 }
 
 #imgFile {  /* 파일 필드 숨기기 */
@@ -35,33 +45,16 @@
 	
 }
 .profileImg{
-	width: 80px;
-    height: 80px;
-    border-radius: 70%;
-    border: solid 1px;
-    text-align: center;
-}
-.img-area label { 
-	display: inline-block; 
-	padding: .5em .75em; 
-	color: #999; 
-	font-size: inherit; 
-	line-height: normal; 
-	vertical-align: middle; 
-	background-color: #fdfdfd; 
-	cursor: pointer; 
-	border: 1px solid #ebebeb; 
-	border-bottom-color: #e2e2e2; 
-	border-radius: .25em; } 
-.img-area input[type="file"] { /* 파일 필드 숨기기 */ 
-	position: absolute; 
-	width: 1px; 
-	height: 1px; 
-	padding: 0; 
-	margin: -1px; 
-	overflow: hidden; 
-	clip:rect(0,0,0,0); 
-	border: 0; 
+	/* display: block;
+  	margin-left: auto;
+ 	margin-right: auto; */
+    width:150px; 
+    height: 150px; 
+    border-radius: 75px; 
+    border: solid 1px; 
+    text-align: center; 
+    object-fit: cover;
+    margin-left:25px;
 }
 
 .filebox {display:inline-block; margin-right: 10px;}
