@@ -94,9 +94,11 @@ textarea:focus{
 }
 .modifyBtn{
 	width:50px;
-	height:25px;
+	height:20px;
 	background-color:white;
 	border: 1px solid white;
 	border-radius:5px;
-	align-self:right;
+}
+.submit{
+	margin-top:15px;
 }

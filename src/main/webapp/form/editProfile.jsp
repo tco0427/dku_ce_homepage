@@ -21,8 +21,8 @@
 <form action="/Member/MemberUpdate" method="post" accept-charset="UTF-8" style="margin:40px;">
     <div class="image-section">
 		<div class="img-area">
-			<img class="profileImg" style="width:150px; height: 150px; border-radius: 75px; border: solid 1px; text-align: center; object-fit: cover;" src="/resource/img/bear.png" alt=""/>
-			<label for="imgFile">업로드</label>
+			<img class="profileImg" style="" src="/resource/img/bear.png" alt=""/><p>
+			<label for="imgFile"><i class="fa fa-camera" aria-hidden="true" style=""></i></label>
 			<input type="file" id="imgFile" name="imgFile" accept=".jpg, .png, .jpeg, .gif" value=""/>		
 		</div>
 	</div>
