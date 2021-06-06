@@ -33,7 +33,7 @@
     font-size: 20px;
     font-weight: 400;
     margin-top: 10px;
-   /*  margin-left:190px; */
+    margin-left:190px;
 }
 .description {
     font-size: 15px;
@@ -50,18 +50,19 @@
 	font-family: "바탕";
 }
 .link{
-	width:300px;
+	width:200px;
 	margin-top:15px;
 	margin-right:25px;
-	height:60px;
-	padding-top:30px;
-	background-color:#718591;
+	height:30px;
+	padding-top:15px;
+	/* background-color:#718591; */
+	background-color:grey;
 	border: 1px solid;
 	border-radius:10px;
 	color:white;
 	text-align:center;
-	font-size:x-large;
+	/* font-size:large; */
 	font-weight: bolder;
-	float:right;
+	float:left;
 	text-decoration:none;
 }

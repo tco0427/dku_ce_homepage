@@ -49,16 +49,10 @@
     <div class="main">
         <div class="title">
             단국대학교 SW융합대학 컴퓨터공학과<br>
-            
             <hr size="2" width="330px" color="black" align="left">
+            <img src="/resource/img/bear.png" width="333px"><br>
             <div style="font-size:16px;">컴퓨터공학과 커뮤니티에 오신 것을 환영합니다:-)<br><p></p></div>
-            <img src="/resource/img/bear.png" width="333px" style="float:left;">
-            <a href="https://www.dankook.ac.kr/web/kor" role="button" class="link">DKU 홈페이지 >></a>
-            <a href="https://nlms.dankook.ac.kr/" role="button" class="link">이러닝캠퍼스 >></a>
-            <br>
-            
         </div>
-        
         <div class="description">
            <p/>컴퓨터공학과는 컴퓨터공학의 지식을 로봇, 영상, 통신 등 다양한 IT 분야에 활용할 수 있는 능력을 갖춘 인재를 배출하여 사회에 기여함을 목표로 합니다.
            이를 위해 컴퓨터공학의 이론을 습득하고 실제 시스템을 구현할 수 있는 능력을 배양하며 로봇, 영상, 통신 등 활용 분야의 지식을 이해할 수 있는 교육 과정을 운영합니다.
