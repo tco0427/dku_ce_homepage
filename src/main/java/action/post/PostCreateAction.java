@@ -25,9 +25,11 @@ public class PostCreateAction implements Action {
         String classification = null;
         String attachFileName=null;
         String filePath=null;
+        int size=2*1024*1024*1024-1;
 
         try{
-            MultipartRequest multipartRequest=new MultipartRequest(request,savePath,"UTF-8");
+            //MultipartRequest에서 파일의 크기는 int의 범위인 2GB가 최대
+            MultipartRequest multipartRequest=new MultipartRequest(request,savePath,size,"UTF-8");
             memberId=multipartRequest.getParameter("memberId");
             title=multipartRequest.getParameter("title");
             content=multipartRequest.getParameter("content");
