@@ -41,10 +41,28 @@
     padding:5px;
    	line-height: 20px;
    	background-color:#F2F1F1;
+   	margin-top:10px;
 }
 .text-center{
 	float: right;
 	width: 100%;
 	text-align: center;	
 	font-family: "바탕";
+}
+.link{
+	width:200px;
+	margin-top:15px;
+	margin-right:25px;
+	height:30px;
+	padding-top:15px;
+	/* background-color:#718591; */
+	background-color:grey;
+	border: 1px solid;
+	border-radius:10px;
+	color:white;
+	text-align:center;
+	/* font-size:large; */
+	font-weight: bolder;
+	float:left;
+	text-decoration:none;
 }
