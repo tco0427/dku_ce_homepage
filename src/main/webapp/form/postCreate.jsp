@@ -81,11 +81,8 @@
 				</div>
 				<div class="mb-3">
 					<div class="submit">
-						<i class="fa fa-picture-o"
-							style="margin-left: 10px; margin-top: 10px;" aria-hidden="true"></i>
-						<input type="file">
 						<label for="fileUpload">
-							<i class="fa fa-folder-o" aria-hidden="true"></i>
+							<i class="fa fa-folder-o" style="margin-left: 10px; margin-top: 10px;" aria-hidden="true"></i>
 						</label>
 						<input id="fileUpload" type="file" name="attachFile">
 						<button type="submit" class="submitBtn">등록</button>
