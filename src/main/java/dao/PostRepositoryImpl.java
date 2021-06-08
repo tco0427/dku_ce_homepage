@@ -138,7 +138,7 @@ public class PostRepositoryImpl implements PostRepository{
         ResultSet rs=null;
         try{
             conn=getConnection();
-            String sql="select * from post where classification='notice' order by creationDate DESC limit 1";
+            String sql="select * from post where classification='notice' order by postPK DESC limit 1";
             pstmt=conn.prepareStatement(sql);
             rs=pstmt.executeQuery();
             rs.next();
@@ -181,12 +181,14 @@ public class PostRepositoryImpl implements PostRepository{
         PreparedStatement pstmt=null;
         try{
             conn=getConnection();
-            String sql="update post set content=? where postPK=?";
+            String sql="update post set content=?, creationDate=?, attachFileName=?, filePath=?  where postPK=?";
             pstmt=conn.prepareStatement(sql);
 
-
             pstmt.setString(1,post.getContent());
-            pstmt.setInt(2,post.getId());
+            pstmt.setDate(2,post.getCreationDate());
+            pstmt.setString(3,post.getAttachFileName());
+            pstmt.setString(4,post.getFilePath());
+            pstmt.setInt(5,post.getId());
 
             return pstmt.executeUpdate();
         }catch(SQLException e){

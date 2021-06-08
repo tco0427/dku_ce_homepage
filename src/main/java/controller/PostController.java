@@ -58,8 +58,10 @@ public class PostController extends HttpServlet {
             String query=request.getQueryString();
 
             String[] strings = query.split("=");
-
-            request.setAttribute(strings[0],strings[1]);
+            Post post=Post.getInstance(strings[1]);
+            String fileName=post.getAttachFileName();
+            System.out.println("fileName: "+fileName);
+            request.setAttribute(strings[0],fileName);
             action.execute(request,response);
         }
     }

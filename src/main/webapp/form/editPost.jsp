@@ -18,11 +18,6 @@
 	float:right;
 	margin-right:5px;
 }
-.btn-area {
-	width:700px;
-	height:40px;
-	background-color:#F2F1F1;
-}
 </style>
 </head>
 
@@ -60,7 +55,7 @@
 				<c:set var="postId" value="${param.id}"/>
 				<c:set var="post" value="${Post.getInstance(postId)}"/>
 				<c:set var="nickName" value="${Member.getNickName()}"/>
-				<form action="/Post/PostUpdate" method="post" accept-charset="UTF-8" >
+				<form action="/Post/PostUpdate" method="post" accept-charset="UTF-8" enctype="Multipart/form-data">
 
 					<div class="postCategory"> | ${post.classification}</div>
 					<div class="postName">${post.title}</div>
@@ -68,7 +63,7 @@
 	    				<i class="fa fa-user fa-2x" aria-hidden="true"></i>
 					</div>
 					<div>
-						<input name="postId" type="text" value="${post.id}"
+						<input name="postId" type="text" value="${postId}"
 							   style="display: none; visibility: hidden;">
 					</div>
 					<div class="user">${nickName}</div>

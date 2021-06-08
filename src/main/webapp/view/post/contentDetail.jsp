@@ -87,7 +87,7 @@
 				<div class="like">
 					<c:choose>
 						<c:when test="${post.attachFileName ne null}">
-							<a href="/Post/Download?fileName=${post.attachFileName}">다운로드</a>
+							<a href="/Post/Download?fileName=${post.id}">다운로드</a>
 						</c:when>
 					</c:choose>
 				</div>
