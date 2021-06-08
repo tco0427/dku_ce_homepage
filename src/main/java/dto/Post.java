@@ -1,5 +1,7 @@
 package dto;
 
+import dao.PostRepository;
+import dao.PostRepositoryImpl;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -54,5 +56,11 @@ public class Post {
         String attachFileName=list.get(4);
         String filePath=list.get(5);
         return new Post(memberId,title,content,creationDate,classification,attachFileName,filePath);
+    }
+
+    public static Post getInstance(String id){
+        PostRepository postRepository=PostRepositoryImpl.getInstance();
+        Post post=postRepository.findOne(Integer.parseInt(id));
+	    return post;
     }
 }
