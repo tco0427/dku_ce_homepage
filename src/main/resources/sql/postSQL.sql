@@ -10,3 +10,9 @@ CREATE TABLE ceHomepage.POST(
 alter table ceHomepage.POST
     add constraint memberID
         FOREIGN KEY(memberID) REFERENCES ceHomepage.`member`(id);
+
+alter table ceHomepage.POST
+    add filePath text;
+
+alter table ceHomepage.POST
+    add attachFileName text;
